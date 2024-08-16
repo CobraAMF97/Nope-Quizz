@@ -34,6 +34,7 @@ function showQuestion() {
     question.choices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.textContent = choice;
+        button.classList.add('choice-button'); // Ajouter une classe pour styliser les boutons
         button.onclick = () => checkAnswer(index, button);
         choicesContainer.appendChild(button);
     });
@@ -109,5 +110,15 @@ function showVictoryMessage() {
 
 // Initialisation du jeu
 window.onload = loadQuestions;
+
+// Ajustements pour les écrans tactiles
+document.addEventListener('touchstart', (event) => {
+    // Prévenir les actions indésirables des événements tactiles
+    if (event.target.tagName === 'BUTTON') {
+        event.preventDefault();
+        event.target.click();
+    }
+});
+
 
 
