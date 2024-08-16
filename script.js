@@ -1,5 +1,7 @@
 let currentQuestionIndex = 0;
 let score = 0;
+let timer;
+let timeRemaining = 5;
 let questions = [];
 
 fetch('questions.json')
@@ -18,7 +20,12 @@ function startQuiz() {
 function showQuestion() {
     const questionElement = document.getElementById('question');
     const choicesElement = document.getElementById('choices');
+    const timerElement = document.getElementById('time-remaining');
     const currentQuestion = questions[currentQuestionIndex];
+
+    timeRemaining = 5;
+    timerElement.textContent = timeRemaining;
+    startTimer();
 
     questionElement.textContent = currentQuestion.question;
     choicesElement.innerHTML = '';
@@ -31,7 +38,23 @@ function showQuestion() {
     });
 }
 
+function startTimer() {
+    timer = setInterval(() => {
+        timeRemaining--;
+        document.getElementById('time-remaining').textContent = timeRemaining;
+        if (timeRemaining === 0) {
+            clearInterval(timer);
+            handleAnswerTimeout();
+        }
+    }, 1000);
+}
+
+function handleAnswerTimeout() {
+    restartQuiz();
+}
+
 function selectAnswer(selectedIndex) {
+    clearInterval(timer);
     const currentQuestion = questions[currentQuestionIndex];
     if (selectedIndex === currentQuestion.correctIndex) {
         score++;
