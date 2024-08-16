@@ -13,6 +13,7 @@ fetch('questions.json')
 
 function startQuiz() {
     document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('restart-message').style.display = 'none';
     document.getElementById('victory-message').style.display = 'none';
     showQuestion();
 }
@@ -58,15 +59,20 @@ function selectAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     if (selectedIndex === currentQuestion.correctIndex) {
         score++;
-        if (score === 10) {
+        if (score >= 10 && currentQuestionIndex === 14) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
             showQuestion();
         }
     } else {
-        restartQuiz();
+        showRestartMessage();
     }
+}
+
+function showRestartMessage() {
+    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('restart-message').style.display = 'block';
 }
 
 function showVictoryMessage() {
