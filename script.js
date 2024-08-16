@@ -9,7 +9,8 @@ fetch('questions.json')
     .then(data => {
         questions = data;
         startQuiz();
-    });
+    })
+    .catch(error => console.error('Erreur de chargement des questions :', error));
 
 function startQuiz() {
     document.getElementById('quiz-container').style.display = 'block';
@@ -67,7 +68,7 @@ function selectAnswer(selectedIndex) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            setTimeout(showQuestion, 2000); // Attendre 2 secondes avant de passer à la question suivante
+            setTimeout(showQuestion, 2000);
         }
     } else {
         responseMessage.textContent = "Ah non, ça c'était trop facile... Retour à la case départ !";
