@@ -1,7 +1,7 @@
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
-let timeRemaining = 5;
+let timeRemaining = 10;
 let selectedQuestions = [];
 let questions = [];
 
@@ -39,7 +39,7 @@ function showQuestion() {
     const timerElement = document.getElementById('time-remaining');
     const currentQuestion = selectedQuestions[currentQuestionIndex];
 
-    timeRemaining = 5;
+    timeRemaining = 10;
     timerElement.textContent = timeRemaining;
     startTimer();
 
@@ -75,15 +75,16 @@ function selectAnswer(selectedIndex) {
 
     if (selectedIndex === currentQuestion.correctIndex) {
         score++;
+    } else {
+        showRestartMessage();
+        return;
     }
 
     currentQuestionIndex++;
 
     if (currentQuestionIndex === selectedQuestions.length) {
-        if (score >= 10) {
+        if (score === 15) {
             showVictoryMessage();
-        } else {
-            showRestartMessage();
         }
     } else {
         showQuestion();
@@ -97,6 +98,13 @@ function showRestartMessage() {
 
 function showVictoryMessage() {
     document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('victory-message').Il semble que mon message ait été coupé. Voici la suite du fichier `script.js` pour terminer le code :
+
+### Fichier `script.js` (suite)
+
+```javascript
+function showVictoryMessage() {
+    document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('victory-message').style.display = 'block';
 }
 
@@ -105,3 +113,5 @@ function restartQuiz() {
     score = 0;
     startQuiz();
 }
+
+startQuiz();
