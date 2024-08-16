@@ -12,11 +12,12 @@
         <div id="quiz-container">
             <div id="question"></div>
             <div id="choices"></div>
+            <div id="timer">Temps restant : <span id="time-remaining">5</span>s</div>
         </div>
         <div id="victory-message">
             <h2>Bravo ! Vous avez gagné !</h2>
             <div id="confetti"></div>
-            <button onclick="restartQuiz()">Recommencer</button>
+            <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
         </div>
     </div>
     <script src="script.js"></script>
