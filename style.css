@@ -12,10 +12,10 @@ body {
 .container {
     text-align: center;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 300px;
+    width: 350px;
     max-width: 90%;
 }
 
@@ -30,9 +30,9 @@ h1 {
 }
 
 #question {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 #choices {
@@ -44,11 +44,11 @@ h1 {
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
@@ -63,7 +63,7 @@ h1 {
 
 #restart-message h2,
 #victory-message h2 {
-    font-size: 20px;
+    font-size: 22px;
     color: #333;
     margin-bottom: 20px;
 }
@@ -72,7 +72,7 @@ h1 {
     background-color: #DC3545;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
@@ -84,7 +84,7 @@ h1 {
 }
 
 #timer {
-    font-size: 14px;
-    color: #555;
+    font-size: 18px;
+    color: #333;
     margin-top: 15px;
 }
