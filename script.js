@@ -3,9 +3,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 10;
 let timerId;
-let askedQuestions = [];
-const maxQuestions = 15;
-const difficultQuestionsCount = 5;
+let usedQuestions = [];
 
 fetch('questions.json')
     .then(response => response.json())
@@ -15,17 +13,10 @@ fetch('questions.json')
     })
     .catch(error => console.error('Erreur lors du chargement des questions:', error));
 
-function getRandomQuestion() {
-    let filteredQuestions = questions.filter(q => !askedQuestions.includes(q));
-    if (filteredQuestions.length === 0) return null;
-    let randomIndex = Math.floor(Math.random() * filteredQuestions.length);
-    return filteredQuestions[randomIndex];
-}
-
 function startQuiz() {
     score = 0;
     currentQuestionIndex = 0;
-    askedQuestions = [];
+    usedQuestions = [];
     showQuestion();
     startTimer();
 }
@@ -33,28 +24,59 @@ function startQuiz() {
 function startTimer() {
     clearInterval(timerId);
     timeLeft = 10;
-    document.querySelector('.timer-bar').style.width = '100%';
+    const timerBar = document.querySelector('#timer .timer-bar');
+    timerBar.style.width = '100%';
     timerId = setInterval(() => {
         timeLeft--;
-        document.querySelector('.timer-bar').style.width = `${(timeLeft / 10) * 100}%`;
+        const percentage = (timeLeft / 10) * 100;
+        timerBar.style.width = `${percentage}%`;
         if (timeLeft <= 0) {
+            clearInterval(timerId);
             gameOver("Temps écoulé !");
         }
     }, 1000);
+}
+
+function getRandomQuestion() {
+    const easyQuestions = questions.filter(q => q.difficulty === 'easy');
+    const mediumQuestions = questions.filter(q => q.difficulty === 'medium');
+    const hardQuestions = questions.filter(q => q.difficulty === 'hard');
+
+    // Ensure at least 5 hard questions
+    let selectedQuestions = [];
+    while (selectedQuestions.length < 15) {
+        if (selectedQuestions.length < 5) {
+            selectedQuestions.push(...pickRandom(hardQuestions, 5));
+        }
+        if (selectedQuestions.length < 15) {
+            selectedQuestions.push(...pickRandom(mediumQuestions, 10));
+        }
+    }
+    // Remove duplicates
+    selectedQuestions = Array.from(new Set(selectedQuestions.map(q => q.question)))
+        .map(question => selectedQuestions.find(q => q.question === question));
+
+    // Ensure no duplicates
+    let availableQuestions = selectedQuestions.filter(q => !usedQuestions.includes(q.question));
+    if (availableQuestions.length === 0) {
+        availableQuestions = selectedQuestions.slice();
+    }
+
+    return availableQuestions.splice(Math.floor(Math.random() * availableQuestions.length), 1)[0];
+}
+
+function pickRandom(array, num) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
 }
 
 function showQuestion() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = '';
 
-    if (currentQuestionIndex < maxQuestions) {
-        let question = getRandomQuestion();
-        if (!question) {
-            gameOver("Erreur: Pas assez de questions disponibles.");
-            return;
-        }
-        askedQuestions.push(question);
-
+    if (currentQuestionIndex < 15) {
+        const question = getRandomQuestion();
+        usedQuestions.push(question.question);
         const questionElement = document.createElement('h2');
         questionElement.textContent = question.question;
         questionContainer.appendChild(questionElement);
@@ -62,7 +84,7 @@ function showQuestion() {
         question.choices.forEach((choice, index) => {
             const button = document.createElement('button');
             button.textContent = choice;
-            button.addEventListener('click', () => checkAnswer(index, question));
+            button.addEventListener('click', () => checkAnswer(index));
             questionContainer.appendChild(button);
         });
     } else {
@@ -70,8 +92,9 @@ function showQuestion() {
     }
 }
 
-function checkAnswer(index, question) {
+function checkAnswer(index) {
     clearInterval(timerId);
+    const question = questions.find(q => q.question === usedQuestions[currentQuestionIndex]);
     if (index === question.correctIndex) {
         score++;
         if (score >= 10) {
@@ -93,11 +116,8 @@ function gameOver(message) {
 
 function showVictoryMessage() {
     const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `
-        <div class="victory-message">
-            <h2>Victoire ! Vous avez bien répondu à ${score} questions sur ${maxQuestions}.</h2>
-            <button class="recommencer" onclick="startQuiz()">Recommencer</button>
-        </div>
-    `;
-    document.querySelector('.victory-message').classList.add('animate');
+    questionContainer.innerHTML = `<h2>Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+    // Animation for victory message
+    const victoryMessage = document.querySelector('#quiz-container h2');
+    victoryMessage.classList.add('victory-animation');
 }
