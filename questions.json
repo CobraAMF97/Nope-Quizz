@@ -1,121 +1,111 @@
 [
     {
-        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire?",
-        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
-        "correctIndex": 0
+        "question": "Qu'est-ce qui est plus lourd qu'une girafe mais plus léger qu'une plume ?",
+        "choices": ["Un éléphant en coton", "Une plume géante", "La Lune", "Le génie du quiz"],
+        "correctIndex": 3
     },
     {
-        "question": "En quelle année la famille de Menthon a-t-elle été anoblie?",
-        "choices": ["1407", "1453", "1523", "1601"],
+        "question": "Quel animal est connu pour être le plus discret au monde ?",
+        "choices": ["Un chat ninja", "Une girafe invisible", "Un poisson bavard", "Moi, quand je perds"],
+        "correctIndex": 1
+    },
+    {
+        "question": "Combien de pattes a une girafe adulte sur la Lune ?",
+        "choices": ["2", "4", "6", "Aucune, elle flotte"],
+        "correctIndex": 3
+    },
+    {
+        "question": "Si une girafe porte un chapeau, dans quel pays est-elle probablement ?",
+        "choices": ["France", "Canada", "Narnia", "Sur la Lune"],
         "correctIndex": 2
     },
     {
-        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon?",
-        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quel grand couturier a fondé la maison de couture Givenchy?",
-        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quel animal dort le moins par jour, environ 2 heures?",
-        "choices": ["Girafe", "Éléphant", "Dauphin", "Chat"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Combien de vertèbres cervicales possède une girafe?",
+        "question": "Combien de vertèbres cervicales possède une girafe ?",
         "choices": ["7", "10", "14", "21"],
         "correctIndex": 0
     },
     {
-        "question": "Quelle maison de couture est célèbre pour son motif à carreaux?",
-        "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quelle est la hauteur moyenne d'une girafe adulte?",
-        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
-        "correctIndexVoici la suite du fichier `questions.json` avec des questions plus difficiles, y compris des questions sur les girafes et d'autres thèmes variés. 
+        "question": "Quelle est la durée de gestation d'une girafe ?",
+        "choices": ["7 mois", "10 mois", "15 mois", "17 mois"],
+Je vais continuer avec le fichier `questions.json` en ajoutant les questions restantes et en complétant celles qui étaient en cours :
 
 ### 4. `questions.json` (Suite et Fin)
 
 ```json
 [
     {
-        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire?",
-        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
-        "correctIndex": 0
+        "question": "Qu'est-ce qui est plus lourd qu'une girafe mais plus léger qu'une plume ?",
+        "choices": ["Un éléphant en coton", "Une plume géante", "La Lune", "Le génie du quiz"],
+        "correctIndex": 3
     },
     {
-        "question": "En quelle année la famille de Menthon a-t-elle été anoblie?",
-        "choices": ["1407", "1453", "1523", "1601"],
+        "question": "Quel animal est connu pour être le plus discret au monde ?",
+        "choices": ["Un chat ninja", "Une girafe invisible", "Un poisson bavard", "Moi, quand je perds"],
+        "correctIndex": 1
+    },
+    {
+        "question": "Combien de pattes a une girafe adulte sur la Lune ?",
+        "choices": ["2", "4", "6", "Aucune, elle flotte"],
+        "correctIndex": 3
+    },
+    {
+        "question": "Si une girafe porte un chapeau, dans quel pays est-elle probablement ?",
+        "choices": ["France", "Canada", "Narnia", "Sur la Lune"],
         "correctIndex": 2
     },
     {
-        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon?",
-        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quel grand couturier a fondé la maison de couture Givenchy?",
-        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quel animal dort le moins par jour, environ 2 heures?",
-        "choices": ["Girafe", "Éléphant", "Dauphin", "Chat"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Combien de vertèbres cervicales possède une girafe?",
+        "question": "Combien de vertèbres cervicales possède une girafe ?",
         "choices": ["7", "10", "14", "21"],
         "correctIndex": 0
     },
     {
-        "question": "Quelle maison de couture est célèbre pour son motif à carreaux?",
-        "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quelle est la hauteur moyenne d'une girafe adulte?",
-        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quelle est la capitale de la mode?",
-        "choices": ["Paris", "Milan", "New York", "Londres"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quelle est la couleur du logo de Chanel?",
-        "choices": ["Rouge", "Bleu", "Noir", "Blanc"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quelle année le lycée Paul Claudel a-t-il été fondé?",
-        "choices": ["1888", "1898", "1901", "1912"],
-        "correctIndex": 3
-    },
-    {
-        "question": "Quel créateur est à l'origine du parfum 'N°5'?",
-        "choices": ["Chanel", "Dior", "Givenchy", "Balmain"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quelle est la durée de gestation d'une girafe?",
+        "question": "Quelle est la durée de gestation d'une girafe ?",
         "choices": ["7 mois", "10 mois", "15 mois", "17 mois"],
         "correctIndex": 3
     },
     {
-        "question": "Combien de cœurs possède une pieuvre?",
+        "question": "Quelle est la hauteur moyenne d'une girafe adulte ?",
+        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
+        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
+        "correctIndex": 0
+    },
+    {
+        "question": "En quelle année la famille de Menthon a-t-elle été anoblie ?",
+        "choices": ["1407", "1453", "1523", "1601"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon ?",
+        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quelle maison de couture est célèbre pour son motif à carreaux ?",
+        "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quel grand couturier a fondé la maison de couture Givenchy ?",
+        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Combien de cœurs possède une pieuvre ?",
         "choices": ["1", "2", "3", "4"],
         "correctIndex": 2
     },
     {
-        "question": "Quel est l'emblème de la maison Hermès?",
+        "question": "Quel est l'emblème de la maison Hermès ?",
         "choices": ["Cheval", "Lion", "Aigle", "Chien"],
         "correctIndex": 0
+    },
+    {
+        "question": "Quelle année le lycée Paul Claudel a-t-il été fondé ?",
+        "choices": ["1888", "1898", "1901", "1912"],
+        "correctIndex": 3
     }
 ]
