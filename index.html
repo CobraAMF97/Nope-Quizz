@@ -14,8 +14,12 @@
             <div id="choices"></div>
             <div id="timer">Temps restant : <span id="time-remaining">5</span>s</div>
         </div>
+        <div id="restart-message">
+            <h2>Mauvaise réponse ! Vous retournez à la première question.</h2>
+            <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
+        </div>
         <div id="victory-message">
-            <h2>Bravo ! Vous avez gagné !</h2>
+            <h2>Bravo ! Vous avez gagné avec un score de 10/15 ou plus !</h2>
             <div id="confetti"></div>
             <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
         </div>
