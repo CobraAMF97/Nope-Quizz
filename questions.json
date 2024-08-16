@@ -2,13 +2,13 @@
     {
         "question": "Quelle maison de couture est célèbre pour son motif à carreaux ?",
         "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "difficulty": "easy"
     },
     {
         "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
         "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "difficulty": "easy"
     },
     {
