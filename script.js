@@ -17,18 +17,31 @@ fetch('questions.json')
     .then(response => response.json())
     .then(data => {
         questions = shuffleArray(data);
-        showTutorial();
+        startQuiz();
     })
     .catch(error => console.error('Erreur lors du chargement des questions:', error));
+
+function startQuiz() {
+    score = 0;
+    currentQuestionIndex = 0;
+    usedQuestions = [];
+    showTutorial(); // Afficher le tutoriel au début
+}
 
 function showTutorial() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = `
-        <h2>Bienvenue dans le Quiz Mode Challenge !</h2>
-        <p>Pour gagner le jeu, il te faudra répondre correctement à 10 questions. Une fois que tu auras atteint cet objectif, tu débloqueras un code spécial !</p>
-        <p>Bonne chance, Julie !</p>
-        <button class="start-game" onclick="startQuiz()">Commencer le jeu</button>
+        <div class="tutorial">
+            <h2>Bienvenue au Quiz !</h2>
+            <p>Vous devez répondre correctement à 10 questions pour débloquer le code.</p>
+            <button class="start-game" onclick="startGame()">Démarrer le jeu</button>
+        </div>
     `;
+}
+
+function startGame() {
+    document.querySelector('.tutorial').style.display = 'none'; // Masquer le tutoriel
+    startQuiz();
 }
 
 function startQuiz() {
@@ -72,7 +85,7 @@ function showQuestion() {
         question.choices.forEach((choice, index) => {
             const button = document.createElement('button');
             button.textContent = choice;
-            button.addEventListener('click', () => checkAnswer(index, question));
+            button.addEventListener('click', () => checkAnswer(index, button));
             questionContainer.appendChild(button);
         });
     } else {
@@ -89,19 +102,24 @@ function getNextQuestion() {
     return question;
 }
 
-function checkAnswer(index, question) {
+function checkAnswer(index, button) {
     clearInterval(timerId);
+    const question = questions.find(q => !usedQuestions.includes(q));
     
-    console.log(`Réponse sélectionnée : ${index}, Réponse correcte : ${question.correctIndex}`);
-    
-    if (index === question.correctIndex) {
+    if (question.correctIndex === index) {
         score++;
+        button.classList.add('burst-animation'); // Ajouter l'animation d'éclat de couleur
+
+        setTimeout(() => {
+            button.classList.remove('burst-animation'); // Retirer la classe après l'animation
+        }, 1000);
+
         if (score >= 10) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            showQuestion();
             startTimer();
+            showQuestion();
         }
     } else {
         showHumorousMessage();
@@ -123,8 +141,7 @@ function showVictoryMessage() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = `
         <h2 class="victory-animation">Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2>
-        <p>Félicitations ! Vous avez débloqué le code suivant :</p>
-        <p><strong>CAPDES3ANS</strong></p>
+        <p>Félicitations ! Vous avez débloqué le code : <strong>CAPDES3ANS</strong></p>
         <button class="recommencer" onclick="startQuiz()">Recommencer</button>
     `;
 }
