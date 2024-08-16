@@ -1,0 +1,27 @@
+[
+    {
+        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire?",
+        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
+        "correctIndex": 0
+    },
+    {
+        "question": "En quelle année la famille de Menthon a-t-elle été anoblie?",
+        "choices": ["1407", "1453", "1523", "1601"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Où est situé le lycée Paul Claudel à Paris?",
+        "choices": ["6ème arrondissement", "8ème arrondissement", "7ème arrondissement", "9ème arrondissement"],
+        "correctIndex": 1
+    },
+    {
+        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon?",
+        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quel grand couturier a fondé la maison de couture Givenchy?",
+        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
+        "correctIndex": 0
+    }
+]
