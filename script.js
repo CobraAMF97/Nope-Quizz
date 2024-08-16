@@ -10,6 +10,7 @@ fetch('questions.json')
     .then(response => response.json())
     .then(data => {
         questions = data;
+        console.log("Questions chargées :", questions);  // Vérification du chargement
         startQuiz();
     })
     .catch(error => console.error('Erreur lors du chargement des questions:', error));
@@ -46,6 +47,13 @@ function showQuestion() {
     questionElement.textContent = currentQuestion.question;
     choicesElement.innerHTML = '';
 
+    currentQuestion.choices.forEach((choice, index) => {
+        const button = document.createElement('button');
+       It appears that my response was cut off. Here is the continuation and completion of the `script.js` file for your quiz:
+
+### Fichier `script.js` (suite)
+
+```javascript
     currentQuestion.choices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.textContent = choice;
@@ -85,6 +93,8 @@ function selectAnswer(selectedIndex) {
     if (currentQuestionIndex === selectedQuestions.length) {
         if (score === 15) {
             showVictoryMessage();
+        } else {
+            showRestartMessage();
         }
     } else {
         showQuestion();
@@ -98,13 +108,6 @@ function showRestartMessage() {
 
 function showVictoryMessage() {
     document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('victory-message').Il semble que mon message ait été coupé. Voici la suite du fichier `script.js` pour terminer le code :
-
-### Fichier `script.js` (suite)
-
-```javascript
-function showVictoryMessage() {
-    document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('victory-message').style.display = 'block';
 }
 
@@ -113,5 +116,3 @@ function restartQuiz() {
     score = 0;
     startQuiz();
 }
-
-startQuiz();
