@@ -3,13 +3,13 @@
         "question": "Quelle maison de couture est célèbre pour son motif à carreaux ?",
         "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
         "correctIndex": 0,
-        "difficulty": "easy"
+        "difficulty": "medium"
     },
     {
         "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
         "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
         "correctIndex": 0,
-        "difficulty": "easy"
+        "difficulty": "medium"
     },
     {
         "question": "En quelle année la famille de Menthon a-t-elle été anoblie ?",
@@ -45,13 +45,19 @@
         "question": "Combien de cœurs possède une pieuvre ?",
         "choices": ["1", "2", "3", "4"],
         "correctIndex": 2,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est l'emblème de la maison Hermès ?",
+        "choices": ["Cheval", "Lion", "Aigle", "Chien"],
+        "correctIndex": 0,
         "difficulty": "medium"
     },
     {
         "question": "Quelle année le lycée Paul Claudel a-t-il été fondé ?",
         "choices": ["1888", "1898", "1901", "1912"],
         "correctIndex": 3,
-        "difficulty": "hard"
+        "difficulty": "medium"
     },
     {
         "question": "Qui a créé la marque de vêtements Off-White ?",
@@ -69,13 +75,13 @@
         "question": "Si une girafe porte un chapeau, dans quel pays est-elle probablement ?",
         "choices": ["France", "Canada", "Narnia", "Sur la Lune"],
         "correctIndex": 2,
-        "difficulty": "medium"
+        "difficulty": "hard"
     },
     {
         "question": "Combien de vertèbres cervicales possède une girafe ?",
         "choices": ["7", "10", "14", "21"],
         "correctIndex": 0,
-        "difficulty": "easy"
+        "difficulty": "medium"
     },
     {
         "question": "Quelle est la durée de gestation d'une girafe ?",
@@ -83,100 +89,51 @@
         "correctIndex": 3,
         "difficulty": "hard"
     },
-    // Ajouter 15 autres questions pour atteindre 30 questions
     {
-        "question": "Quel est le plus grand désert du monde ?",
-        "choices": ["Sahara", "Antarctique", "Gobi", "Kalahari"],
+        "question": "Quel est le plus grand océan du monde ?",
+        "choices": ["Océan Atlantique", "Océan Pacifique", "Océan Indien", "Océan Arctique"],
+        "correctIndex": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quelle est la langue officielle de la Suisse ?",
+        "choices": ["Allemand", "Français", "Italien", "Toutes les réponses ci-dessus"],
+        "correctIndex": 3,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le plus grand animal terrestre vivant ?",
+        "choices": ["Éléphant d'Afrique", "Rhinocéros blanc", "Girafe", "Bison"],
+        "correctIndex": 0,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le nom de la galaxie dans laquelle se trouve notre système solaire ?",
+        "choices": ["Galaxie d'Andromède", "Voie Lactée", "Galaxie du Sombrero", "Galaxie du Tourbillon"],
+        "correctIndex": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quel est le pays le plus densément peuplé au monde ?",
+        "choices": ["Monaco", "Singapour", "Bangladesh", "Taiwan"],
+        "correctIndex": 0,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le plus grand récif corallien du monde ?",
+        "choices": ["Récif de Ningaloo", "Récif de la Grande Barrière", "Récif de Belize", "Récif de l'Atlantique"],
         "correctIndex": 1,
         "difficulty": "hard"
     },
     {
-        "question": "Quel est le symbole chimique de l'or ?",
-        "choices": ["Au", "Ag", "Fe", "Pb"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus grand océan de la planète ?",
-        "choices": ["Atlantique", "Pacifique", "Indien", "Arctique"],
+        "question": "Quel est le nom de l'œuvre la plus célèbre de Léonard de Vinci ?",
+        "choices": ["La Cène", "La Joconde", "L'Annonciation", "Saint Jean Baptiste"],
         "correctIndex": 1,
         "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le pays le plus peuplé du monde ?",
-        "choices": ["Chine", "Inde", "États-Unis", "Brésil"],
-        "correctIndex": 0,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quel est le nom du premier homme à marcher sur la Lune ?",
-        "choices": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"],
-        "correctIndex": 0,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quelle est la capitale de l'Australie ?",
-        "choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-        "correctIndex": 2,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est l'élément chimique le plus léger ?",
-        "choices": ["Hydrogène", "Hélium", "Lithium", "Béryllium"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus grand animal terrestre ?",
-        "choices": ["Éléphant", "Girafe", "Rhinocéros", "Hippopotame"],
-        "correctIndex": 0,
-        "difficulty": "easy"
     },
     {
         "question": "Quel est le plus long fleuve du monde ?",
-        "choices": ["Nil", "Amazon", "Yangtsé", "Mississippi"],
-        "correctIndex": 1,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quelle est la monnaie officielle du Japon ?",
-        "choices": ["Yuan", "Won", "Yen", "Ringgit"],
-        "correctIndex": 2,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quelle est la langue la plus parlée dans le monde ?",
-        "choices": ["Anglais", "Espagnol", "Chinois", "Arabe"],
-        "correctIndex": 2,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quelle est la capitale du Canada ?",
-        "choices": ["Toronto", "Vancouver", "Ottawa", "Montréal"],
-        "correctIndex": 2,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quel est l'élément chimique avec le symbole 'Fe' ?",
-        "choices": ["Fer", "Argent", "Plomb", "Or"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le pays d'origine du fromage Parmesan ?",
-        "choices": ["Italie", "France", "Suisse", "Espagne"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus grand lac d'eau douce en Afrique ?",
-        "choices": ["Lac Victoria", "Lac Tanganyika", "Lac Malawi", "Lac Albert"],
-        "correctIndex": 0,
-        "difficulty": "hard"
-    },
-    {
-        "question": "Quel est le nom du célèbre volcan situé en Italie ?",
-        "choices": ["Vésuve", "Etna", "Stromboli", "Monte Bianco"],
+        "choices": ["Fleuve Amazonie", "Fleuve Nil", "Fleuve Yangtsé", "Fleuve Mississippi"],
         "correctIndex": 1,
         "difficulty": "medium"
     },
@@ -211,15 +168,46 @@
         "difficulty": "medium"
     },
     {
-        "question": "Quel est le nom du célèbre peintre néerlandais connu pour ses tournesols ?",
-        "choices": ["Vincent Van Gogh", "Claude Monet", "Pablo Picasso", "Rembrandt"],
+        "question": "Quel est le nom du célèbre parc d'attractions en Floride ?",
+        "choices": ["Disneyland Paris", "Universal Studios", "Walt Disney World", "EPCOT"],
+        "correctIndex": 2,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quel est le nom de l'instrument utilisé pour mesurer la température ?",
+        "choices": ["Baromètre", "Thermomètre", "Hygromètre", "Anémomètre"],
+        "correctIndex": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quelle est la planète la plus proche du soleil ?",
+        "choices": ["Mercure", "Vénus", "Terre", "Mars"],
         "correctIndex": 0,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quel est le plus grand lac d'eau douce au monde ?",
+        "choices": ["Lac Baïkal", "Lac Supérieur", "Lac Victoria", "Lac Huron"],
+        "correctIndex": 1,
         "difficulty": "medium"
     },
     {
-        "question": "Quel est le plus grand pays en termes de superficie ?",
-        "choices": ["Russie", "Canada", "États-Unis", "Chine"],
-        "correctIndex": 0,
+        "question": "Quel est le nom du plus grand organe du corps humain ?",
+        "choices": ["Cœur", "Peau", "Foie", "Poumon"],
+        "correctIndex": 1,
         "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le plus grand volcan actif du monde ?",
+        "choices": ["Mont Fuji", "Kilauea", "Mont Etna", "Mont Vésuve"],
+        "correctIndex": 1,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le nom de la théorie qui explique l'origine de l'univers ?",
+        "choices": ["Théorie de l'évolution", "Théorie des cordes", "Big Bang", "Théorie quantique"],
+        "correctIndex": 2,
+        "difficulty": "hard"
     }
 ]
+
