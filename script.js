@@ -4,14 +4,18 @@ let score = 0;
 let timeLeft = 10;
 let timerId;
 let usedQuestions = [];
-
-fetch('questions.json')
-    .then(response => response.json())
-    .then(data => {
-        questions = data;
-        startQuiz();
-    })
-    .catch(error => console.error('Erreur lors du chargement des questions:', error));
+let humorMessages = [
+    "Oups, Julie ! Ce n'était pas la bonne réponse. Peut-être que les extraterrestres de Narvette connaissent la bonne réponse ?",
+    "Mauvaise réponse, Méchante Girafe ! Si tu te demandais, je suis un expert en devinettes, mais apparemment pas en quiz.",
+    "Échec critique, Gros Prout ! Peut-être qu'un café te redonnera l'énergie nécessaire pour la prochaine question.",
+    "Oh non, Julie ! Tu as trouvé la mauvaise réponse. Ce n'est pas la fin du monde, juste la fin de cette question.",
+    "Raté, Narvette ! On dirait que tu as eu un petit bug. Faisons une pause pour redémarrer !",
+    "Pas tout à fait, Méchante Girafe ! Mais ne t'inquiète pas, même les meilleures d'entre nous ont parfois besoin d'un entraînement.",
+    "Mauvaise réponse, Gros Prout ! Peut-être que le destin a décidé de te donner une chance supplémentaire.",
+    "Zut, Julie ! On dirait que cette question a eu le dernier mot. Mais ne t’inquiète pas, le prochain round est à toi !",
+    "Ah, mauvaise réponse, Narvette ! Le cerveau est peut-être en mode vacances. Revenons à la prochaine question !",
+    "Erreur, Méchante Girafe ! Ne te laisse pas abattre, même les champions du monde ont commencé quelque part !"
+];
 
 function startQuiz() {
     score = 0;
@@ -105,13 +109,14 @@ function checkAnswer(index) {
             showQuestion();
         }
     } else {
-        gameOver("Mauvaise réponse !");
+        gameOver();
     }
 }
 
-function gameOver(message) {
+function gameOver() {
     const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `<h2>${message}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+    const randomMessage = humorMessages[Math.floor(Math.random() * humorMessages.length)];
+    questionContainer.innerHTML = `<h2>${randomMessage}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
 }
 
 function showVictoryMessage() {
