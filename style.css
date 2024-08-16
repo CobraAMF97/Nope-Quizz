@@ -81,6 +81,23 @@ button.recommencer:active {
     background-color: #a71d2a;
 }
 
+/* Animation d'Éclat de Couleur */
+@keyframes color-burst {
+    0% {
+        background-color: #28a745; /* Couleur initiale (vert) */
+    }
+    50% {
+        background-color: #ffeb3b; /* Couleur éclatante (jaune) */
+    }
+    100% {
+        background-color: #28a745; /* Retour à la couleur initiale */
+    }
+}
+
+.burst-animation {
+    animation: color-burst 1s ease-out;
+}
+
 /* Victory Animation */
 @keyframes victory {
     0% {
