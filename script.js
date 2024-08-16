@@ -6,16 +6,19 @@ let timerId;
 let usedQuestions = [];
 let humorMessages = [
     "Oups, Julie ! Ce n'était pas la bonne réponse. Peut-être que les extraterrestres de Narvette connaissent la bonne réponse ?",
-    "Mauvaise réponse, Méchante Girafe ! Si tu te demandais, je suis un expert en devinettes, mais apparemment pas en quiz.",
-    "Échec critique, Gros Prout ! Peut-être qu'un café te redonnera l'énergie nécessaire pour la prochaine question.",
-    "Oh non, Julie ! Tu as trouvé la mauvaise réponse. Ce n'est pas la fin du monde, juste la fin de cette question.",
-    "Raté, Narvette ! On dirait que tu as eu un petit bug. Faisons une pause pour redémarrer !",
-    "Pas tout à fait, Méchante Girafe ! Mais ne t'inquiète pas, même les meilleures d'entre nous ont parfois besoin d'un entraînement.",
-    "Mauvaise réponse, Gros Prout ! Peut-être que le destin a décidé de te donner une chance supplémentaire.",
-    "Zut, Julie ! On dirait que cette question a eu le dernier mot. Mais ne t’inquiète pas, le prochain round est à toi !",
-    "Ah, mauvaise réponse, Narvette ! Le cerveau est peut-être en mode vacances. Revenons à la prochaine question !",
-    "Erreur, Méchante Girafe ! Ne te laisse pas abattre, même les champions du monde ont commencé quelque part !"
+    "Mauvaise réponse, Méchante Girafe ! Si tu te demandais, je suis un expert en mauvaise réponse.",
+    "Oh non, Gros Prout ! Cette réponse n'est pas correcte. Essaie encore !",
+    "C'est raté, Julie ! Tu sais, même les questions ont des mauvais jours !",
+    "Argh ! La réponse était plus compliquée que le dernier prout. Réessaie, Julie !"
 ];
+
+fetch('questions.json')
+    .then(response => response.json())
+    .then(data => {
+        questions = shuffleArray(data);
+        startQuiz();
+    })
+    .catch(error => console.error('Erreur lors du chargement des questions:', error));
 
 function startQuiz() {
     score = 0;
@@ -32,8 +35,7 @@ function startTimer() {
     timerBar.style.width = '100%';
     timerId = setInterval(() => {
         timeLeft--;
-        const percentage = (timeLeft / 10) * 100;
-        timerBar.style.width = `${percentage}%`;
+        timerBar.style.width = `${(timeLeft / 10) * 100}%`;
         if (timeLeft <= 0) {
             clearInterval(timerId);
             gameOver("Temps écoulé !");
@@ -41,46 +43,17 @@ function startTimer() {
     }, 1000);
 }
 
-function getRandomQuestion() {
-    const easyQuestions = questions.filter(q => q.difficulty === 'easy');
-    const mediumQuestions = questions.filter(q => q.difficulty === 'medium');
-    const hardQuestions = questions.filter(q => q.difficulty === 'hard');
-
-    // Ensure at least 5 hard questions
-    let selectedQuestions = [];
-    while (selectedQuestions.length < 15) {
-        if (selectedQuestions.length < 5) {
-            selectedQuestions.push(...pickRandom(hardQuestions, 5));
-        }
-        if (selectedQuestions.length < 15) {
-            selectedQuestions.push(...pickRandom(mediumQuestions, 10));
-        }
-    }
-    // Remove duplicates
-    selectedQuestions = Array.from(new Set(selectedQuestions.map(q => q.question)))
-        .map(question => selectedQuestions.find(q => q.question === question));
-
-    // Ensure no duplicates
-    let availableQuestions = selectedQuestions.filter(q => !usedQuestions.includes(q.question));
-    if (availableQuestions.length === 0) {
-        availableQuestions = selectedQuestions.slice();
-    }
-
-    return availableQuestions.splice(Math.floor(Math.random() * availableQuestions.length), 1)[0];
-}
-
-function pickRandom(array, num) {
-    const shuffled = array.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-}
-
 function showQuestion() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = '';
 
-    if (currentQuestionIndex < 15) {
-        const question = getRandomQuestion();
-        usedQuestions.push(question.question);
+    if (currentQuestionIndex < 15 && questions.length > 0) {
+        let question = getNextQuestion();
+        if (!question) {
+            showVictoryMessage();
+            return;
+        }
+
         const questionElement = document.createElement('h2');
         questionElement.textContent = question.question;
         questionContainer.appendChild(questionElement);
@@ -96,10 +69,19 @@ function showQuestion() {
     }
 }
 
+function getNextQuestion() {
+    const availableQuestions = questions.filter(q => !usedQuestions.includes(q));
+    if (availableQuestions.length === 0) return null;
+
+    let question = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+    usedQuestions.push(question);
+    return question;
+}
+
 function checkAnswer(index) {
     clearInterval(timerId);
-    const question = questions.find(q => q.question === usedQuestions[currentQuestionIndex]);
-    if (index === question.correctIndex) {
+    const question = questions.find(q => !usedQuestions.includes(q));
+    if (question.correctIndex === index) {
         score++;
         if (score >= 10) {
             showVictoryMessage();
@@ -109,20 +91,32 @@ function checkAnswer(index) {
             showQuestion();
         }
     } else {
-        gameOver();
+        showHumorousMessage();
     }
 }
 
-function gameOver() {
+function showHumorousMessage() {
     const questionContainer = document.getElementById('quiz-container');
-    const randomMessage = humorMessages[Math.floor(Math.random() * humorMessages.length)];
-    questionContainer.innerHTML = `<h2>${randomMessage}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+    const message = humorMessages[Math.floor(Math.random() * humorMessages.length)];
+    questionContainer.innerHTML = `<h2>${message}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+}
+
+function gameOver(message) {
+    const questionContainer = document.getElementById('quiz-container');
+    questionContainer.innerHTML = `<h2>${message}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
 }
 
 function showVictoryMessage() {
     const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `<h2>Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
-    // Animation for victory message
-    const victoryMessage = document.querySelector('#quiz-container h2');
-    victoryMessage.classList.add('victory-animation');
+    questionContainer.innerHTML = `<h2 class="victory-animation">Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+}
+
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
 }
