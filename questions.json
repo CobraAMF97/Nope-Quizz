@@ -23,5 +23,30 @@
         "question": "Quel grand couturier a fondé la maison de couture Givenchy?",
         "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
         "correctIndex": 0
+    },
+    {
+        "question": "Quel couturier est connu pour son motif pied-de-poule?",
+        "choices": ["Alexander McQueen", "Balmain", "Dior", "Chanel"],
+        "correctIndex": 3
+    },
+    {
+        "question": "Dans quel arrondissement se trouve le lycée Paul Claudel?",
+        "choices": ["7ème", "8ème", "6ème", "5ème"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quelle est la capitale de la mode?",
+        "choices": ["Paris", "Milan", "New York", "Londres"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle maison de couture est célèbre pour son motif à carreaux?",
+        "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle année le lycée Paul Claudel a-t-il été fondé?",
+        "choices": ["1888", "1898", "1901", "1912"],
+        "correctIndex": 3
     }
 ]
