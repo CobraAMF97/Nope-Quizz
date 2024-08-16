@@ -1,85 +1,117 @@
-/* Global Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
 .container {
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
     text-align: center;
-    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    max-width: 90%;
 }
 
 h1 {
     font-size: 24px;
+    color: #333;
     margin-bottom: 20px;
 }
 
 #quiz-container {
-    display: none;
+    margin-bottom: 20px;
 }
 
-#restart-message, #victory-message {
-    display: none;
+#question {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
 }
 
-button {
-    padding: 15px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #007aff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-    background-color: #005bb5;
+#choices {
+    display: flex;
+    flex-direction: column;
 }
 
 #choices button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#choices button:hover {
+    background-color: #0056b3;
+}
+
+#restart-message,
+#victory-message {
+    display: none;
+}
+
+#restart-message h2,
+#victory-message h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 #restart-btn {
-    background-color: #ff3b30;
+    background-color: #DC3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 #restart-btn:hover {
-    background-color: #cc2b20;
-}
-
-#confetti {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+    background-color: #c82333;
 }
 
 #timer {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff3b30;
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-    .container {
-        width: 90%;
+#confetti {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.confetto {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFC107;
+    opacity: 0.8;
+    animation: confetti-fall 3s infinite linear;
+}
+
+@keyframes confetti-fall {
+    0% {
+        top: -10px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100px;
+        transform: rotate(360deg);
     }
 }
