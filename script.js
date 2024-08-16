@@ -79,3 +79,4 @@ function showVictoryMessage() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = `<h2>Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
 }
+
