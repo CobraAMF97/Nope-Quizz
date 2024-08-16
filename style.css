@@ -9,6 +9,8 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    /* Viewport settings for mobile */
+    -webkit-text-size-adjust: 100%; /* Prevents text scaling on iOS */
 }
 
 /* Container */
@@ -17,7 +19,7 @@ body {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 20px; /* Reduced padding for smaller screens */
     max-width: 500px;
     width: 90%;
     transition: transform 0.3s ease-in-out;
@@ -29,10 +31,10 @@ body {
 
 /* Timer */
 #timer {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 18px; /* Reduced font size for better fit */
+    margin-bottom: 15px;
     position: relative;
-    height: 6px;
+    height: 4px; /* Reduced height for better fit */
     background: #f0f0f0;
     border-radius: 3px;
     overflow: hidden;
@@ -48,9 +50,9 @@ body {
 button {
     display: block;
     width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    font-size: 18px;
+    margin: 8px 0; /* Reduced margin for better fit */
+    padding: 10px; /* Reduced padding for better fit */
+    font-size: 16px; /* Adjusted font size for mobile */
     background-color: #007bff;
     color: white;
     border: none;
@@ -120,13 +122,13 @@ button.recommencer:active {
 
 /* Tutorial Styles */
 .tutorial {
-    font-size: 18px;
+    font-size: 16px; /* Reduced font size for mobile */
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .tutorial p {
-    margin: 10px 0;
+    margin: 8px 0; /* Adjusted margin for better fit */
 }
 
 .start-game {
@@ -134,8 +136,8 @@ button.recommencer:active {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px; /* Reduced padding for better fit */
+    font-size: 16px; /* Adjusted font size for mobile */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -143,3 +145,30 @@ button.recommencer:active {
 .start-game:hover {
     background-color: #0056b3;
 }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Further reduced padding for very small screens */
+    }
+
+    #timer {
+        font-size: 16px; /* Adjusted font size */
+        height: 4px; /* Adjusted height */
+    }
+
+    button {
+        font-size: 14px; /* Adjusted font size */
+        padding: 8px; /* Further reduced padding */
+    }
+
+    .tutorial {
+        font-size: 14px; /* Further reduced font size */
+    }
+
+    .start-game {
+        font-size: 14px; /* Further reduced font size */
+        padding: 8px; /* Further reduced padding */
+    }
+}
+
