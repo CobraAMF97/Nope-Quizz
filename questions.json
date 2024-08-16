@@ -27,9 +27,17 @@
     {
         "question": "Quelle est la durée de gestation d'une girafe ?",
         "choices": ["7 mois", "10 mois", "15 mois", "17 mois"],
-Je vais continuer avec le fichier `questions.json` en ajoutant les questions restantes et en complétant celles qui étaient en cours :
+        "correctIndex": 3
+    },
+    {
+        "question": "Quelle est la hauteur moyenne d'une girafe adulte ?",
+        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
+        "correctIndex": 2
+    },
+    {
+        "question": "QuelIl semble que la réponse ait été coupée avant d’être complète. Voici le fichier JSON des questions en entier, ainsi que quelques vérifications pour t'assurer que tout fonctionne correctement :
 
-### 4. `questions.json` (Suite et Fin)
+### Fichier `questions.json` Complet :
 
 ```json
 [
