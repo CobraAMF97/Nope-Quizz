@@ -17,9 +17,19 @@ fetch('questions.json')
     .then(response => response.json())
     .then(data => {
         questions = shuffleArray(data);
-        startQuiz();
+        showTutorial();
     })
     .catch(error => console.error('Erreur lors du chargement des questions:', error));
+
+function showTutorial() {
+    const questionContainer = document.getElementById('quiz-container');
+    questionContainer.innerHTML = `
+        <h2>Bienvenue dans le Quiz Mode Challenge !</h2>
+        <p>Pour gagner le jeu, il te faudra répondre correctement à 10 questions. Une fois que tu auras atteint cet objectif, tu débloqueras un code spécial !</p>
+        <p>Bonne chance, Julie !</p>
+        <button class="start-game" onclick="startQuiz()">Commencer le jeu</button>
+    `;
+}
 
 function startQuiz() {
     score = 0;
@@ -111,7 +121,12 @@ function gameOver(message) {
 
 function showVictoryMessage() {
     const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `<h2 class="victory-animation">Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+    questionContainer.innerHTML = `
+        <h2 class="victory-animation">Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2>
+        <p>Félicitations ! Vous avez débloqué le code suivant :</p>
+        <p><strong>CAPDES3ANS</strong></p>
+        <button class="recommencer" onclick="startQuiz()">Recommencer</button>
+    `;
 }
 
 function shuffleArray(array) {
@@ -123,4 +138,3 @@ function shuffleArray(array) {
     }
     return array;
 }
-
