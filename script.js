@@ -1,159 +1,113 @@
+// Déclaration des variables globales
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 10;
 let timerId;
-let usedQuestions = [];
-let humorMessages = [
-    "Oups, Julie ! Ce n'était pas la bonne réponse. Peut-être que les extraterrestres connaissent la bonne réponse ?",
-    "Mauvaise réponse, Méchante girafe ! Si tu te demandais, je suis un expert en mauvaise réponse.",
-    "Oh non, Gros prout ! Cette réponse n'est pas correcte. Essaie encore !",
-    "Tu vas y arriver, j'en suis certain !",
-    "C'est raté, Julie ! Tu sais, même les questions ont des mauvais jours !",
-    "Argh ! La réponse était plus compliquée que prévue. Réessaie, Julie !"
-];
+const timeLimit = 30; // Temps en secondes pour chaque question
+const timerDisplay = document.getElementById('timer');
 
-document.addEventListener('DOMContentLoaded', () => {
-    initializeQuiz();
-});
-
-async function initializeQuiz() {
-    try {
-        const response = await fetch('questions.json');
-        const data = await response.json();
-        questions = shuffleArray(data);
-        showTutorial();
-    } catch (error) {
-        console.error('Erreur lors du chargement des questions:', error);
-    }
+// Fonction pour charger les questions depuis le fichier JSON
+function loadQuestions() {
+    fetch('questions.json')
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            showQuestion();
+        })
+        .catch(error => console.error('Erreur de chargement des questions:', error));
 }
 
-function showTutorial() {
-    const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `
-        <div class="tutorial">
-            <h2>Bienvenue au Quiz !</h2>
-            <p>Vous devez répondre correctement à 10 questions pour débloquer le code.</p>
-            <button class="start-game" onclick="startGame()">Démarrer le jeu</button>
-        </div>
-    `;
-}
-
-function startGame() {
-    document.querySelector('.tutorial').style.display = 'none';
-    startQuiz();
-}
-
-function startQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    usedQuestions = [];
-    showQuestion();
-    startTimer();
-}
-
-function startTimer() {
-    clearInterval(timerId);
-    timeLeft = 10;
-    const timerBar = document.querySelector('#timer .timer-bar');
-    timerBar.style.width = '100%';
-    timerId = setInterval(() => {
-        timeLeft--;
-        timerBar.style.width = `${(timeLeft / 10) * 100}%`;
-        if (timeLeft <= 0) {
-            clearInterval(timerId);
-            gameOver("Temps écoulé !");
-        }
-    }, 1000);
-}
-
+// Fonction pour afficher la question actuelle
 function showQuestion() {
-    const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = '';
-
-    if (currentQuestionIndex >= 15 || questions.length === 0) {
-        showVictoryMessage();
-        return;
-    }
-
-    let question = getNextQuestion();
+    const question = questions[currentQuestionIndex];
+    
     if (!question) {
-        showVictoryMessage();
+        console.error("Question non trouvée");
         return;
     }
 
-    const questionElement = document.createElement('h2');
-    questionElement.textContent = question.question;
-    questionContainer.appendChild(questionElement);
+    // Mettre à jour l'affichage de la question et des choix
+    document.getElementById('question-text').textContent = question.question;
+    const choicesContainer = document.getElementById('choices');
+    choicesContainer.innerHTML = '';
 
     question.choices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.textContent = choice;
-        button.addEventListener('click', () => checkAnswer(index, button));
-        questionContainer.appendChild(button);
+        button.onclick = () => checkAnswer(index, button);
+        choicesContainer.appendChild(button);
     });
+
+    startTimer();
 }
 
-function getNextQuestion() {
-    const availableQuestions = questions.filter(q => !usedQuestions.includes(q));
-    if (availableQuestions.length === 0) return null;
+// Fonction pour démarrer le timer
+function startTimer() {
+    let timeLeft = timeLimit;
+    timerDisplay.textContent = `Temps restant : ${timeLeft}s`;
 
-    let question = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-    usedQuestions.push(question);
-    return question;
+    timerId = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = `Temps restant : ${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            showHumorousMessage();
+        }
+    }, 1000);
 }
 
-function checkAnswer(index, button) {
-    clearInterval(timerId);
-    const question = questions.find(q => !usedQuestions.includes(q));
+// Fonction pour vérifier la réponse de l'utilisateur
+function checkAnswer(selectedIndex, button) {
+    clearInterval(timerId); // Arrêter le timer
+
+    // Trouver la question actuelle
+    const question = questions[currentQuestionIndex];
     
-    if (question.correctIndex === index) {
+    if (!question) {
+        console.error("Question non trouvée");
+        return;
+    }
+
+    console.log(`Réponse sélectionnée : ${selectedIndex}, Réponse correcte : ${question.correctIndex}`);
+
+    if (question.correctIndex === selectedIndex) {
         score++;
-        button.classList.add('burst-animation');
+        button.classList.add('burst-animation'); // Ajouter l'animation d'éclat de couleur
 
         setTimeout(() => {
-            button.classList.remove('burst-animation');
+            button.classList.remove('burst-animation'); // Retirer la classe après l'animation
         }, 1000);
 
         if (score >= 10) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            startTimer();
-            showQuestion();
+            if (currentQuestionIndex < questions.length) {
+                startTimer();
+                showQuestion();
+            } else {
+                showVictoryMessage();
+            }
         }
     } else {
         showHumorousMessage();
     }
 }
 
+// Fonction pour afficher un message humoristique
 function showHumorousMessage() {
-    const questionContainer = document.getElementById('quiz-container');
-    const message = humorMessages[Math.floor(Math.random() * humorMessages.length)];
-    questionContainer.innerHTML = `<h2>${message}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
+    document.getElementById('question-text').textContent = "Dommage ! Essayez encore ! 😅";
+    document.getElementById('choices').innerHTML = '';
 }
 
-function gameOver(message) {
-    const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `<h2>${message}</h2><button class="recommencer" onclick="startQuiz()">Recommencer</button>`;
-}
-
+// Fonction pour afficher un message de victoire
 function showVictoryMessage() {
-    const questionContainer = document.getElementById('quiz-container');
-    questionContainer.innerHTML = `
-        <h2 class="victory-animation">Victoire ! Vous avez bien répondu à ${score} questions sur 15.</h2>
-        <p>Félicitations ! Vous avez débloqué le code : <strong>CAPDES3ANS</strong></p>
-        <button class="recommencer" onclick="startQuiz()">Recommencer</button>
-    `;
+    document.getElementById('question-text').textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉`;
+    document.getElementById('choices').innerHTML = '';
 }
 
-function shuffleArray(array) {
-    let currentIndex = array.length, randomIndex;
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-    return array;
-}
+// Initialisation du jeu
+window.onload = loadQuestions;
+
 
