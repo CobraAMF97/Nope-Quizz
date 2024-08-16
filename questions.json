@@ -10,9 +10,48 @@
         "correctIndex": 2
     },
     {
-        "question": "Où est situé le lycée Paul Claudel à Paris?",
-        "choices": ["6ème arrondissement", "8ème arrondissement", "7ème arrondissement", "9ème arrondissement"],
-        "correctIndex": 1
+        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon?",
+        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quel grand couturier a fondé la maison de couture Givenchy?",
+        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quel animal dort le moins par jour, environ 2 heures?",
+        "choices": ["Girafe", "Éléphant", "Dauphin", "Chat"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Combien de vertèbres cervicales possède une girafe?",
+        "choices": ["7", "10", "14", "21"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle maison de couture est célèbre pour son motif à carreaux?",
+        "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle est la hauteur moyenne d'une girafe adulte?",
+        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
+        "correctIndexVoici la suite du fichier `questions.json` avec des questions plus difficiles, y compris des questions sur les girafes et d'autres thèmes variés. 
+
+### 4. `questions.json` (Suite et Fin)
+
+```json
+[
+    {
+        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire?",
+        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
+        "correctIndex": 0
+    },
+    {
+        "question": "En quelle année la famille de Menthon a-t-elle été anoblie?",
+        "choices": ["1407", "1453", "1523", "1601"],
+        "correctIndex": 2
     },
     {
         "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon?",
@@ -25,18 +64,13 @@
         "correctIndex": 0
     },
     {
-        "question": "Quel couturier est connu pour son motif pied-de-poule?",
-        "choices": ["Alexander McQueen", "Balmain", "Dior", "Chanel"],
-        "correctIndex": 3
+        "question": "Quel animal dort le moins par jour, environ 2 heures?",
+        "choices": ["Girafe", "Éléphant", "Dauphin", "Chat"],
+        "correctIndex": 0
     },
     {
-        "question": "Dans quel arrondissement se trouve le lycée Paul Claudel?",
-        "choices": ["7ème", "8ème", "6ème", "5ème"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quelle est la capitale de la mode?",
-        "choices": ["Paris", "Milan", "New York", "Londres"],
+        "question": "Combien de vertèbres cervicales possède une girafe?",
+        "choices": ["7", "10", "14", "21"],
         "correctIndex": 0
     },
     {
@@ -45,8 +79,43 @@
         "correctIndex": 0
     },
     {
+        "question": "Quelle est la hauteur moyenne d'une girafe adulte?",
+        "choices": ["3 mètres", "5 mètres", "7 mètres", "9 mètres"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quelle est la capitale de la mode?",
+        "choices": ["Paris", "Milan", "New York", "Londres"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle est la couleur du logo de Chanel?",
+        "choices": ["Rouge", "Bleu", "Noir", "Blanc"],
+        "correctIndex": 2
+    },
+    {
         "question": "Quelle année le lycée Paul Claudel a-t-il été fondé?",
         "choices": ["1888", "1898", "1901", "1912"],
         "correctIndex": 3
+    },
+    {
+        "question": "Quel créateur est à l'origine du parfum 'N°5'?",
+        "choices": ["Chanel", "Dior", "Givenchy", "Balmain"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle est la durée de gestation d'une girafe?",
+        "choices": ["7 mois", "10 mois", "15 mois", "17 mois"],
+        "correctIndex": 3
+    },
+    {
+        "question": "Combien de cœurs possède une pieuvre?",
+        "choices": ["1", "2", "3", "4"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quel est l'emblème de la maison Hermès?",
+        "choices": ["Cheval", "Lion", "Aigle", "Chien"],
+        "correctIndex": 0
     }
 ]
