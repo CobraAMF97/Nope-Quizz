@@ -18,6 +18,7 @@ let questions = [
         choices: ["Deux", "Trois", "Quatre", "Cinq"],
         correctIndex: 1
     }
+    // Ajoute ici d'autres questions pour en avoir 15 au total
 ];
 
 function startQuiz() {
@@ -69,14 +70,17 @@ function selectAnswer(selectedIndex) {
 
     if (selectedIndex === currentQuestion.correctIndex) {
         score++;
-        if (currentQuestionIndex === questions.length - 1 && score >= 2) {
+    }
+    
+    if (currentQuestionIndex === questions.length - 1) {
+        if (score >= 10) {
             showVictoryMessage();
         } else {
-            currentQuestionIndex++;
-            showQuestion();
+            showRestartMessage();
         }
     } else {
-        showRestartMessage();
+        currentQuestionIndex++;
+        showQuestion();
     }
 }
 
