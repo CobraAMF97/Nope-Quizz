@@ -62,7 +62,7 @@ function showQuestion() {
         question.choices.forEach((choice, index) => {
             const button = document.createElement('button');
             button.textContent = choice;
-            button.addEventListener('click', () => checkAnswer(index));
+            button.addEventListener('click', () => checkAnswer(index, question));
             questionContainer.appendChild(button);
         });
     } else {
@@ -79,17 +79,19 @@ function getNextQuestion() {
     return question;
 }
 
-function checkAnswer(index) {
+function checkAnswer(index, question) {
     clearInterval(timerId);
-    const question = questions.find(q => !usedQuestions.includes(q));
-    if (question.correctIndex === index) {
+    
+    console.log(`Réponse sélectionnée : ${index}, Réponse correcte : ${question.correctIndex}`);
+    
+    if (index === question.correctIndex) {
         score++;
         if (score >= 10) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            startTimer();
             showQuestion();
+            startTimer();
         }
     } else {
         showHumorousMessage();
@@ -121,3 +123,4 @@ function shuffleArray(array) {
     }
     return array;
 }
+
