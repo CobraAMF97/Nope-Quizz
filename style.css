@@ -13,25 +13,29 @@ body {
     text-align: center;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    max-width: 600px;
+    width: 100%;
 }
 
 button {
     display: block;
-    width: 100%;
-    margin: 10px 0;
+    width: calc(100% - 20px); /* Ajusté pour la marge */
+    margin: 10px auto;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 button.recommencer {
@@ -43,6 +47,23 @@ button.recommencer:hover {
 }
 
 #timer {
-    font-size: 18px;
+    font-size: 0; /* Masquer le texte */
     margin-bottom: 20px;
+}
+
+.timer-bar {
+    height: 20px;
+    width: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: width 1s linear;
+}
+
+.victory-message {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
