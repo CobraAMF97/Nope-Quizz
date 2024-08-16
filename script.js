@@ -3,13 +3,16 @@ let score = 0;
 let timer;
 let timeRemaining = 5;
 let selectedQuestions = [];
-let questions = [
-    // Ajoute ici les 50 questions comme indiqué précédemment
-    // Par exemple :
-    { question: "Quelle est la capitale de la France ?", choices: ["Paris", "Londres", "Berlin", "Madrid"], correctIndex: 0 },
-    { question: "Qui a peint la Joconde ?", choices: ["Van Gogh", "Picasso", "Léonard de Vinci", "Monet"], correctIndex: 2 }
-    // Ajoute les autres questions ici
-];
+let questions = [];
+
+// Charger les questions depuis le fichier JSON
+fetch('questions.json')
+    .then(response => response.json())
+    .then(data => {
+        questions = data;
+        startQuiz();
+    })
+    .catch(error => console.error('Erreur lors du chargement des questions:', error));
 
 function startQuiz() {
     document.getElementById('quiz-container').style.display = 'block';
@@ -102,5 +105,3 @@ function restartQuiz() {
     score = 0;
     startQuiz();
 }
-
-startQuiz();
