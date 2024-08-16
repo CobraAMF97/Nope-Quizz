@@ -5,73 +5,73 @@
         "correctIndex": 0
     },
     {
-        "question": "Qui a popularisé la petite robe noire ?",
+        "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
         "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
         "correctIndex": 0
     },
     {
-        "question": "Quelle est la capitale mondiale de la mode ?",
-        "choices": ["Paris", "Milan", "New York", "Tokyo"],
-        "correctIndex": 0
+        "question": "En quelle année la famille de Menthon a-t-elle été anoblie ?",
+        "choices": ["1407", "1453", "1523", "1601"],
+        "correctIndex": 2
     },
     {
-        "question": "Quel couturier est connu pour avoir inventé le New Look ?",
-        "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
+        "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon ?",
+        "choices": ["Château de Versailles", "Château de Chambord", "Château de Menthon-Saint-Bernard", "Château de Fontainebleau"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Quelle maison de couture a été fondée en 1947 par Christian Dior ?",
+        "choices": ["Chanel", "Dior", "Givenchy", "Balmain"],
         "correctIndex": 1
-    },
-    {
-        "question": "Quelle est la marque de luxe connue pour son logo double C ?",
-        "choices": ["Chanel", "Cartier", "Céline", "Chloé"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quel créateur a fondé la maison de couture Givenchy ?",
-        "choices": ["Hubert de Givenchy", "Pierre Balmain", "Cristóbal Balenciaga", "Charles Worth"],
-        "correctIndex": 0
-    },
-    {
-        "question": "En quelle année Yves Saint Laurent a-t-il présenté sa première collection sous son nom ?",
-        "choices": ["1957", "1961", "1965", "1970"],
-        "correctIndex": 1
-    },
-    {
-        "question": "Quelle marque est célèbre pour ses sacs à main avec un monogramme LV ?",
-        "choices": ["Louis Vuitton", "Gucci", "Prada", "Versace"],
-        "correctIndex": 0
-    },
-    {
-        "question": "Quel couturier est connu pour sa robe Mondrian ?",
-        "choices": ["Paco Rabanne", "Pierre Cardin", "André Courrèges", "Yves Saint Laurent"],
-        "correctIndex": 3
     },
     {
         "question": "Quelle est la capitale de la mode en Italie ?",
-        "choices": ["Rome", "Venise", "Milan", "Florence"],
-        "correctIndex": 2
-    },
-    {
-        "question": "Quelle maison est célèbre pour son imprimé toile de Jouy ?",
-        "choices": ["Dior", "Chanel", "Balenciaga", "Valentino"],
+        "choices": ["Milan", "Rome", "Florence", "Venise"],
         "correctIndex": 0
     },
     {
-        "question": "Quelle marque est connue pour ses écharpes en cachemire à motif tartan ?",
-        "choices": ["Hermès", "Prada", "Burberry", "Chanel"],
+        "question": "Quel est le symbole de la maison Hermès ?",
+        "choices": ["Cheval", "Lion", "Aigle", "Chien"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Combien de cœurs possède une pieuvre ?",
+        "choices": ["1", "2", "3", "4"],
         "correctIndex": 2
     },
     {
-        "question": "Quel créateur a inventé le smoking féminin ?",
-        "choices": ["Karl Lagerfeld", "Yves Saint Laurent", "Coco Chanel", "Cristóbal Balenciaga"],
+        "question": "Quel est l'emblème de la maison Hermès ?",
+        "choices": ["Cheval", "Lion", "Aigle", "Chien"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quelle année le lycée Paul Claudel a-t-il été fondé ?",
+        "choices": ["1888", "1898", "1901", "1912"],
+        "correctIndex": 3
+    },
+    {
+        "question": "Qui a créé la marque de vêtements Off-White ?",
+        "choices": ["Virgil Abloh", "Karl Lagerfeld", "Tom Ford", "Alexander McQueen"],
+        "correctIndex": 0
+    },
+    {
+        "question": "Quel animal est connu pour être le plus discret au monde ?",
+        "choices": ["Un chat ninja", "Une girafe invisible", "Un poisson bavard", "Moi, quand je perds"],
         "correctIndex": 1
     },
     {
-        "question": "Quel accessoire est devenu emblématique de Coco Chanel ?",
-        "choices": ["Les perles", "Les lunettes de soleil", "Les montres", "Les ceintures"],
+        "question": "Si une girafe porte un chapeau, dans quel pays est-elle probablement ?",
+        "choices": ["France", "Canada", "Narnia", "Sur la Lune"],
+        "correctIndex": 2
+    },
+    {
+        "question": "Combien de vertèbres cervicales possède une girafe ?",
+        "choices": ["7", "10", "14", "21"],
         "correctIndex": 0
     },
     {
-        "question": "Quelle maison de couture est célèbre pour ses robes de bal volumineuses ?",
-        "choices": ["Dior", "Givenchy", "Valentino", "Vera Wang"],
-        "correctIndex": 2
+        "question": "Quelle est la durée de gestation d'une girafe ?",
+        "choices": ["7 mois", "10 mois", "15 mois", "17 mois"],
+        "correctIndex": 3
     }
 ]
