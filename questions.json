@@ -2,19 +2,19 @@
     {
         "question": "Quelle maison de couture est célèbre pour son motif à carreaux ?",
         "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "difficulty": "easy"
     },
     {
         "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
         "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "difficulty": "easy"
     },
     {
         "question": "En quelle année la famille de Menthon a-t-elle été anoblie ?",
         "choices": ["1407", "1453", "1523", "1601"],
-        "correctIndex": 2,
+        "correctIndex": 3,
         "difficulty": "medium"
     },
     {
@@ -32,7 +32,7 @@
     {
         "question": "Quelle est la capitale de la mode en Italie ?",
         "choices": ["Milan", "Rome", "Florence", "Venise"],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "difficulty": "easy"
     },
     {
@@ -44,7 +44,7 @@
     {
         "question": "Combien de cœurs possède une pieuvre ?",
         "choices": ["1", "2", "3", "4"],
-        "correctIndex": 2,
+        "correctIndex": 3,
         "difficulty": "hard"
     },
     {
@@ -80,7 +80,7 @@
     {
         "question": "Combien de vertèbres cervicales possède une girafe ?",
         "choices": ["7", "10", "14", "21"],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "difficulty": "hard"
     },
     {
@@ -92,7 +92,7 @@
     {
         "question": "Quel est le nom du designer célèbre pour ses sacs à main en cuir ?",
         "choices": ["Louis Vuitton", "Gucci", "Prada", "Chanel"],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "difficulty": "medium"
     },
     {
@@ -172,5 +172,42 @@
         "choices": ["Kilauea", "Etna", "Mauna Loa", "Vésuve"],
         "correctIndex": 2,
         "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le nom de la collection emblématique lancée par Prada en 2016, qui mélange les influences des années 90 et des motifs géométriques ?",
+        "choices": ["S/S 2016", "Resort 2016", "Miu Miu 2016", "Prada Linea Rossa"],
+        "correctIndex": 3,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le nom du célèbre architecte qui a conçu le musée Prada à Milan, inauguré en 2015 ?",
+        "choices": ["Rem Koolhaas", "Tadao Ando", "Frank Gehry", "Zaha Hadid"],
+        "correctIndex": 0,
+        "difficulty": "hard"
+    },
+    {
+        "question": "En quelle année la marque Soeur a-t-elle été fondée par Domitille et Salomé Brion ?",
+        "choices": ["2007", "2008", "2009", "2010"],
+        "correctIndex": 1,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le concept principal derrière les collections de la marque Soeur ?",
+        "choices": ["Luxe accessible", "Haute couture sur mesure", "Streetwear innovant", "Minimalisme chic"],
+        "correctIndex": 3,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel événement de mode majeur est souvent associé au nom de Bureau Betak, notamment pour ses spectacles de mode spectaculaires ?",
+        "choices": ["Paris Fashion Week", "Milan Fashion Week", "New York Fashion Week", "London Fashion Week"],
+        "correctIndex": 0,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le nom du fondateur de Bureau Betak, connu pour avoir conçu des décors pour des défilés de mode de grandes marques ?",
+        "choices": ["Alexandre Betak", "Jean-Paul Gaultier", "Karl Lagerfeld", "Giorgio Armani"],
+        "correctIndex": 0,
+        "difficulty": "hard"
     }
 ]
+
