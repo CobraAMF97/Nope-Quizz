@@ -11,6 +11,7 @@ fetch('questions.json')
 
 function startQuiz() {
     document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('victory-message').style.display = 'none';
     showQuestion();
 }
 
@@ -34,29 +35,43 @@ function selectAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     if (selectedIndex === currentQuestion.correctIndex) {
         score++;
-    }
-    document.getElementById('next-btn').style.display = 'block';
-}
-
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
+        if (score === 10) {
+            showVictoryMessage();
+        } else {
+            currentQuestionIndex++;
+            showQuestion();
+        }
     } else {
-        showResult();
+        restartQuiz();
     }
-    document.getElementById('next-btn').style.display = 'none';
 }
 
-function showResult() {
+function showVictoryMessage() {
     document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('result-container').style.display = 'block';
-    document.getElementById('result').textContent = `Votre score est de ${score} sur ${questions.length}`;
+    document.getElementById('victory-message').style.display = 'block';
+    startConfetti();
 }
 
 function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    document.getElementById('result-container').style.display = 'none';
     startQuiz();
+    stopConfetti();
+}
+
+function startConfetti() {
+    const confettiElement = document.getElementById('confetti');
+    confettiElement.innerHTML = '';
+    for (let i = 0; i < 100; i++) {
+        const confetto = document.createElement('div');
+        confetto.className = 'confetto';
+        confetto.style.left = `${Math.random() * 100}%`;
+        confetto.style.animationDelay = `${Math.random() * 2}s`;
+        confettiElement.appendChild(confetto);
+    }
+}
+
+function stopConfetti() {
+    const confettiElement = document.getElementById('confetti');
+    confettiElement.innerHTML = '';
 }
