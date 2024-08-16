@@ -31,7 +31,6 @@ body {
 #timer {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
     position: relative;
     height: 6px;
     background: #f0f0f0;
@@ -41,7 +40,7 @@ body {
 
 #timer .timer-bar {
     height: 100%;
-    background: #007bff;
+    background: #28a745;
     transition: width 1s linear;
 }
 
@@ -100,4 +99,30 @@ button.recommencer:active {
 
 .victory-animation {
     animation: victory 1s ease-out;
+}
+
+/* Tutorial Styles */
+.tutorial {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tutorial p {
+    margin: 10px 0;
+}
+
+.start-game {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-game:hover {
+    background-color: #0056b3;
 }
