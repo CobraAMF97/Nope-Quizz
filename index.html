@@ -3,24 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Mode</title>
+    <title>Quiz Mode Challenge</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Quiz Mode Challenge</h1>
+        <p id="timer">Temps restant : 10s</p>
         <div id="quiz-container">
-            <div id="question"></div>
-            <div id="choices"></div>
-            <div id="timer">Temps restant : <span id="time-remaining">10</span>s</div>
-        </div>
-        <div id="restart-message">
-            <h2>Mauvaise réponse ! Retour à la case départ...</h2>
-            <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
-        </div>
-        <div id="victory-message">
-            <h2>Victoire ! Vous avez répondu correctement à 15 questions.</h2>
-            <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
+            <!-- Le quiz apparaîtra ici -->
         </div>
     </div>
     <script src="script.js"></script>
