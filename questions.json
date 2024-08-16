@@ -3,19 +3,19 @@
         "question": "Quelle maison de couture est célèbre pour son motif à carreaux ?",
         "choices": ["Burberry", "Gucci", "Hermès", "Dior"],
         "correctIndex": 0,
-        "difficulty": "medium"
+        "difficulty": "easy"
     },
     {
         "question": "Quel créateur est connu pour avoir popularisé la petite robe noire ?",
         "choices": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
         "correctIndex": 0,
-        "difficulty": "medium"
+        "difficulty": "easy"
     },
     {
         "question": "En quelle année la famille de Menthon a-t-elle été anoblie ?",
         "choices": ["1407", "1453", "1523", "1601"],
         "correctIndex": 2,
-        "difficulty": "hard"
+        "difficulty": "medium"
     },
     {
         "question": "Quel est le nom du célèbre château appartenant à la famille de Menthon ?",
@@ -57,7 +57,7 @@
         "question": "Quelle année le lycée Paul Claudel a-t-il été fondé ?",
         "choices": ["1888", "1898", "1901", "1912"],
         "correctIndex": 3,
-        "difficulty": "medium"
+        "difficulty": "hard"
     },
     {
         "question": "Qui a créé la marque de vêtements Off-White ?",
@@ -81,7 +81,7 @@
         "question": "Combien de vertèbres cervicales possède une girafe ?",
         "choices": ["7", "10", "14", "21"],
         "correctIndex": 0,
-        "difficulty": "medium"
+        "difficulty": "hard"
     },
     {
         "question": "Quelle est la durée de gestation d'une girafe ?",
@@ -90,124 +90,87 @@
         "difficulty": "hard"
     },
     {
-        "question": "Quel est le plus grand océan du monde ?",
-        "choices": ["Océan Atlantique", "Océan Pacifique", "Océan Indien", "Océan Arctique"],
-        "correctIndex": 1,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quelle est la langue officielle de la Suisse ?",
-        "choices": ["Allemand", "Français", "Italien", "Toutes les réponses ci-dessus"],
-        "correctIndex": 3,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus grand animal terrestre vivant ?",
-        "choices": ["Éléphant d'Afrique", "Rhinocéros blanc", "Girafe", "Bison"],
+        "question": "Quel est le nom du designer célèbre pour ses sacs à main en cuir ?",
+        "choices": ["Louis Vuitton", "Gucci", "Prada", "Chanel"],
         "correctIndex": 0,
         "difficulty": "medium"
     },
     {
-        "question": "Quel est le nom de la galaxie dans laquelle se trouve notre système solaire ?",
-        "choices": ["Galaxie d'Andromède", "Voie Lactée", "Galaxie du Sombrero", "Galaxie du Tourbillon"],
-        "correctIndex": 1,
+        "question": "Quel pays est connu pour avoir inventé le sushi ?",
+        "choices": ["Japon", "Chine", "Corée", "Thaïlande"],
+        "correctIndex": 0,
         "difficulty": "easy"
     },
     {
-        "question": "Quel est le pays le plus densément peuplé au monde ?",
-        "choices": ["Monaco", "Singapour", "Bangladesh", "Taiwan"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus grand récif corallien du monde ?",
-        "choices": ["Récif de Ningaloo", "Récif de la Grande Barrière", "Récif de Belize", "Récif de l'Atlantique"],
-        "correctIndex": 1,
-        "difficulty": "hard"
-    },
-    {
-        "question": "Quel est le nom de l'œuvre la plus célèbre de Léonard de Vinci ?",
-        "choices": ["La Cène", "La Joconde", "L'Annonciation", "Saint Jean Baptiste"],
-        "correctIndex": 1,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le plus long fleuve du monde ?",
-        "choices": ["Fleuve Amazonie", "Fleuve Nil", "Fleuve Yangtsé", "Fleuve Mississippi"],
-        "correctIndex": 1,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le nom du célèbre pont de San Francisco ?",
-        "choices": ["Pont de Brooklyn", "Pont Golden Gate", "Pont de Londres", "Pont de l'Université"],
-        "correctIndex": 1,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quel est le plus petit pays du monde ?",
-        "choices": ["Monaco", "Vatican", "San Marin", "Liechtenstein"],
-        "correctIndex": 1,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Quel est le nom du plus grand désert de sable au monde ?",
-        "choices": ["Sahara", "Gobi", "Kalahari", "Patagonie"],
-        "correctIndex": 0,
-        "difficulty": "hard"
-    },
-    {
-        "question": "Quel est le principal gaz à effet de serre responsable du réchauffement climatique ?",
-        "choices": ["Méthane", "Oxygène", "Azote", "Dioxyde de carbone"],
-        "correctIndex": 3,
-        "difficulty": "hard"
-    },
-    {
-        "question": "Quel est le nom de l'organe principal du système circulatoire ?",
-        "choices": ["Cœur", "Poumon", "Rein", "Foie"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
-        "question": "Quel est le nom du célèbre parc d'attractions en Floride ?",
-        "choices": ["Disneyland Paris", "Universal Studios", "Walt Disney World", "EPCOT"],
+        "question": "En quelle année a été lancée la première iPhone ?",
+        "choices": ["2005", "2006", "2007", "2008"],
         "correctIndex": 2,
-        "difficulty": "easy"
+        "difficulty": "medium"
     },
     {
-        "question": "Quel est le nom de l'instrument utilisé pour mesurer la température ?",
-        "choices": ["Baromètre", "Thermomètre", "Hygromètre", "Anémomètre"],
-        "correctIndex": 1,
-        "difficulty": "easy"
+        "question": "Quel est l'élément le plus précieux au monde ?",
+        "choices": ["Or", "Diamant", "Platine", "Rhodium"],
+        "correctIndex": 3,
+        "difficulty": "hard"
     },
     {
-        "question": "Quelle est la planète la plus proche du soleil ?",
-        "choices": ["Mercure", "Vénus", "Terre", "Mars"],
+        "question": "Quel est le sport national en Espagne ?",
+        "choices": ["Football", "Basketball", "Tennis", "Cyclisme"],
         "correctIndex": 0,
         "difficulty": "easy"
     },
     {
-        "question": "Quel est le plus grand lac d'eau douce au monde ?",
-        "choices": ["Lac Baïkal", "Lac Supérieur", "Lac Victoria", "Lac Huron"],
+        "question": "Quel artiste est connu pour avoir peint 'La Nuit étoilée' ?",
+        "choices": ["Van Gogh", "Picasso", "Monet", "Da Vinci"],
+        "correctIndex": 0,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quelle est la langue officielle du Brésil ?",
+        "choices": ["Espagnol", "Portugais", "Anglais", "Français"],
+        "correctIndex": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quel est l'animal terrestre le plus grand du monde ?",
+        "choices": ["Éléphant", "Rhinocéros", "Girafe", "Hippopotame"],
+        "correctIndex": 2,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le plus grand océan du monde ?",
+        "choices": ["Atlantique", "Pacifique", "Indien", "Arctique"],
         "correctIndex": 1,
         "difficulty": "medium"
     },
     {
-        "question": "Quel est le nom du plus grand organe du corps humain ?",
-        "choices": ["Cœur", "Peau", "Foie", "Poumon"],
-        "correctIndex": 1,
+        "question": "Quel célèbre architecte a conçu le musée Guggenheim de Bilbao ?",
+        "choices": ["Frank Gehry", "Norman Foster", "Zaha Hadid", "Renzo Piano"],
+        "correctIndex": 0,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le plus grand désert du monde ?",
+        "choices": ["Sahara", "Gobi", "Kalahari", "Antarctique"],
+        "correctIndex": 3,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quelle est la capitale de l'Australie ?",
+        "choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+        "correctIndex": 2,
         "difficulty": "medium"
+    },
+    {
+        "question": "Quelle est la principale source de vitamine C ?",
+        "choices": ["Orange", "Pomme", "Banane", "Fraise"],
+        "correctIndex": 0,
+        "difficulty": "easy"
     },
     {
         "question": "Quel est le plus grand volcan actif du monde ?",
-        "choices": ["Mont Fuji", "Kilauea", "Mont Etna", "Mont Vésuve"],
-        "correctIndex": 1,
-        "difficulty": "hard"
-    },
-    {
-        "question": "Quel est le nom de la théorie qui explique l'origine de l'univers ?",
-        "choices": ["Théorie de l'évolution", "Théorie des cordes", "Big Bang", "Théorie quantique"],
+        "choices": ["Kilauea", "Etna", "Mauna Loa", "Vésuve"],
         "correctIndex": 2,
         "difficulty": "hard"
     }
 ]
-
