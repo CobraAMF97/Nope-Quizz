@@ -5,11 +5,12 @@ let timeLeft = 10;
 let timerId;
 let usedQuestions = [];
 let humorMessages = [
-    "Oups, Julie ! Ce n'était pas la bonne réponse. Peut-être que les extraterrestres de Narvette connaissent la bonne réponse ?",
-    "Mauvaise réponse, Méchante Girafe ! Si tu te demandais, je suis un expert en mauvaise réponse.",
-    "Oh non, Gros Prout ! Cette réponse n'est pas correcte. Essaie encore !",
+    "Oups, Julie ! Ce n'était pas la bonne réponse. Peut-être que les extraterrestres connaissent la bonne réponse ?",
+    "Mauvaise réponse, Méchante girafe ! Si tu te demandais, je suis un expert en mauvaise réponse.",
+    "Oh non, Gros prout ! Cette réponse n'est pas correcte. Essaie encore !",
+    "Tu vas y arriver, j'en suis certain !",
     "C'est raté, Julie ! Tu sais, même les questions ont des mauvais jours !",
-    "Argh ! La réponse était plus compliquée que le dernier prout. Réessaie, Julie !"
+    "Argh ! La réponse était plus compliquée que prévue. Réessaie, Julie !"
 ];
 
 fetch('questions.json')
