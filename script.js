@@ -2,15 +2,23 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timer;
 let timeRemaining = 5;
-let questions = [];
-
-fetch('questions.json')
-    .then(response => response.json())
-    .then(data => {
-        questions = data;
-        startQuiz();
-    })
-    .catch(error => console.error('Erreur de chargement des questions :', error));
+let questions = [
+    {
+        question: "Quelle est la capitale de la France ?",
+        choices: ["Paris", "Londres", "Berlin", "Madrid"],
+        correctIndex: 0
+    },
+    {
+        question: "Qui a peint la Joconde ?",
+        choices: ["Van Gogh", "Picasso", "Léonard de Vinci", "Monet"],
+        correctIndex: 2
+    },
+    {
+        question: "Combien de côtés a un triangle ?",
+        choices: ["Deux", "Trois", "Quatre", "Cinq"],
+        correctIndex: 1
+    }
+];
 
 function startQuiz() {
     document.getElementById('quiz-container').style.display = 'block';
@@ -58,28 +66,18 @@ function handleAnswerTimeout() {
 function selectAnswer(selectedIndex) {
     clearInterval(timer);
     const currentQuestion = questions[currentQuestionIndex];
-    const responseMessage = document.createElement('div');
 
     if (selectedIndex === currentQuestion.correctIndex) {
-        responseMessage.textContent = "Bien joué, mais je suis sûr que tu as juste eu de la chance.";
-        responseMessage.style.color = "green";
         score++;
-        if (score >= 10 && currentQuestionIndex === 14) {
+        if (currentQuestionIndex === questions.length - 1 && score >= 2) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            setTimeout(showQuestion, 2000);
+            showQuestion();
         }
     } else {
-        responseMessage.textContent = "Ah non, ça c'était trop facile... Retour à la case départ !";
-        responseMessage.style.color = "red";
         showRestartMessage();
     }
-
-    document.body.appendChild(responseMessage);
-    setTimeout(() => {
-        responseMessage.remove();
-    }, 2000);
 }
 
 function showRestartMessage() {
@@ -90,29 +88,12 @@ function showRestartMessage() {
 function showVictoryMessage() {
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('victory-message').style.display = 'block';
-    startConfetti();
 }
 
 function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     startQuiz();
-    stopConfetti();
 }
 
-function startConfetti() {
-    const confettiElement = document.getElementById('confetti');
-    confettiElement.innerHTML = '';
-    for (let i = 0; i < 100; i++) {
-        const confetto = document.createElement('div');
-        confetto.className = 'confetto';
-        confetto.style.left = `${Math.random() * 100}%`;
-        confetto.style.animationDelay = `${Math.random() * 2}s`;
-        confettiElement.appendChild(confetto);
-    }
-}
-
-function stopConfetti() {
-    const confettiElement = document.getElementById('confetti');
-    confettiElement.innerHTML = '';
-}
+startQuiz();
