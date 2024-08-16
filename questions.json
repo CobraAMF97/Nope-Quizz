@@ -35,10 +35,9 @@
         "correctIndex": 2
     },
     {
-        "question": "QuelIl semble que la réponse ait été coupée avant d’être complète. Voici le fichier JSON des questions en entier, ainsi que quelques vérifications pour t'assurer que tout fonctionne correctement :
+        "question": "Quel créateur est connu pour avoirIl semble que ma réponse ait été coupée. Voici le fichier `questions.json` complet avec 15 questions. Assure-toi de remplacer tout le contenu de ton fichier actuel par ce qui suit :
 
-### Fichier `questions.json` Complet :
-
+### 4. Fichier `questions.json`
 ```json
 [
     {
