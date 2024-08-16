@@ -28,7 +28,7 @@ h1 {
     display: none;
 }
 
-#victory-message {
+#restart-message, #victory-message {
     display: none;
 }
 
