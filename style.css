@@ -16,6 +16,7 @@ body {
     padding: 20px;
     max-width: 400px;
     text-align: center;
+    position: relative;
 }
 
 h1 {
@@ -53,6 +54,14 @@ button:hover {
     margin-bottom: 10px;
 }
 
+#restart-btn {
+    background-color: #ff3b30;
+}
+
+#restart-btn:hover {
+    background-color: #cc2b20;
+}
+
 #confetti {
     position: absolute;
     top: 0;
@@ -62,30 +71,15 @@ button:hover {
     pointer-events: none;
 }
 
+#timer {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff3b30;
+}
+
 @media only screen and (max-width: 600px) {
     .container {
         width: 90%;
-    }
-}
-/* Confetti Styles */
-.confetto {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: hsl(var(--hue), 100%, 50%);
-    border-radius: 50%;
-    animation: fall 3s infinite;
-}
-
-@keyframes fall {
-    0% {
-        top: -10px;
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-    }
-    100% {
-        top: 100vh;
-        opacity: 0;
-        transform: translateX(100px) rotate(360deg);
     }
 }
