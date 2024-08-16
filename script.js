@@ -57,17 +57,28 @@ function handleAnswerTimeout() {
 function selectAnswer(selectedIndex) {
     clearInterval(timer);
     const currentQuestion = questions[currentQuestionIndex];
+    const responseMessage = document.createElement('div');
+
     if (selectedIndex === currentQuestion.correctIndex) {
+        responseMessage.textContent = "Bien joué, mais je suis sûr que tu as juste eu de la chance.";
+        responseMessage.style.color = "green";
         score++;
         if (score >= 10 && currentQuestionIndex === 14) {
             showVictoryMessage();
         } else {
             currentQuestionIndex++;
-            showQuestion();
+            setTimeout(showQuestion, 2000); // Attendre 2 secondes avant de passer à la question suivante
         }
     } else {
+        responseMessage.textContent = "Ah non, ça c'était trop facile... Retour à la case départ !";
+        responseMessage.style.color = "red";
         showRestartMessage();
     }
+
+    document.body.appendChild(responseMessage);
+    setTimeout(() => {
+        responseMessage.remove();
+    }, 2000);
 }
 
 function showRestartMessage() {
