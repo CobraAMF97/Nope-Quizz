@@ -11,80 +11,38 @@ body {
 
 .container {
     text-align: center;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 350px;
-    max-width: 90%;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#quiz-container {
-    margin-bottom: 20px;
-}
-
-#question {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#choices {
-    display: flex;
-    flex-direction: column;
-}
-
-#choices button {
-    background-color: #007BFF;
+button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
 }
 
-#choices button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-#restart-message,
-#victory-message {
-    display: none;
+button.recommencer {
+    background-color: #dc3545;
 }
 
-#restart-message h2,
-#victory-message h2 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#restart-btn {
-    background-color: #DC3545;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#restart-btn:hover {
+button.recommencer:hover {
     background-color: #c82333;
 }
 
 #timer {
     font-size: 18px;
-    color: #333;
-    margin-top: 15px;
+    margin-bottom: 20px;
 }
