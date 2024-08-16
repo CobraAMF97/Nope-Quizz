@@ -13,19 +13,19 @@ let humorMessages = [
     "Argh ! La réponse était plus compliquée que prévue. Réessaie, Julie !"
 ];
 
-fetch('questions.json')
-    .then(response => response.json())
-    .then(data => {
-        questions = shuffleArray(data);
-        startQuiz();
-    })
-    .catch(error => console.error('Erreur lors du chargement des questions:', error));
+document.addEventListener('DOMContentLoaded', () => {
+    initializeQuiz();
+});
 
-function startQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    usedQuestions = [];
-    showTutorial(); // Afficher le tutoriel au début
+async function initializeQuiz() {
+    try {
+        const response = await fetch('questions.json');
+        const data = await response.json();
+        questions = shuffleArray(data);
+        showTutorial();
+    } catch (error) {
+        console.error('Erreur lors du chargement des questions:', error);
+    }
 }
 
 function showTutorial() {
@@ -40,7 +40,7 @@ function showTutorial() {
 }
 
 function startGame() {
-    document.querySelector('.tutorial').style.display = 'none'; // Masquer le tutoriel
+    document.querySelector('.tutorial').style.display = 'none';
     startQuiz();
 }
 
@@ -71,26 +71,27 @@ function showQuestion() {
     const questionContainer = document.getElementById('quiz-container');
     questionContainer.innerHTML = '';
 
-    if (currentQuestionIndex < 15 && questions.length > 0) {
-        let question = getNextQuestion();
-        if (!question) {
-            showVictoryMessage();
-            return;
-        }
-
-        const questionElement = document.createElement('h2');
-        questionElement.textContent = question.question;
-        questionContainer.appendChild(questionElement);
-
-        question.choices.forEach((choice, index) => {
-            const button = document.createElement('button');
-            button.textContent = choice;
-            button.addEventListener('click', () => checkAnswer(index, button));
-            questionContainer.appendChild(button);
-        });
-    } else {
+    if (currentQuestionIndex >= 15 || questions.length === 0) {
         showVictoryMessage();
+        return;
     }
+
+    let question = getNextQuestion();
+    if (!question) {
+        showVictoryMessage();
+        return;
+    }
+
+    const questionElement = document.createElement('h2');
+    questionElement.textContent = question.question;
+    questionContainer.appendChild(questionElement);
+
+    question.choices.forEach((choice, index) => {
+        const button = document.createElement('button');
+        button.textContent = choice;
+        button.addEventListener('click', () => checkAnswer(index, button));
+        questionContainer.appendChild(button);
+    });
 }
 
 function getNextQuestion() {
@@ -108,10 +109,10 @@ function checkAnswer(index, button) {
     
     if (question.correctIndex === index) {
         score++;
-        button.classList.add('burst-animation'); // Ajouter l'animation d'éclat de couleur
+        button.classList.add('burst-animation');
 
         setTimeout(() => {
-            button.classList.remove('burst-animation'); // Retirer la classe après l'animation
+            button.classList.remove('burst-animation');
         }, 1000);
 
         if (score >= 10) {
@@ -155,3 +156,4 @@ function shuffleArray(array) {
     }
     return array;
 }
+
