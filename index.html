@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Participez à notre quiz mode challenge et testez vos connaissances sur la mode. Répondez correctement à 10 questions pour débloquer un code spécial !">
     <title>Quiz Mode Challenge</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Quiz Mode Challenge</h1>
-        <div id="timer">
-            <div class="timer-bar"></div>
-        </div>
-        <div id="quiz-container">
-            <!-- Le quiz apparaîtra ici -->
-        </div>
+        <header>
+            <h1>Quiz Mode Challenge</h1>
+        </header>
+        <section id="quiz-content">
+            <div id="timer" aria-label="Minuteur">
+                <div class="timer-bar"></div>
+            </div>
+            <div id="quiz-container" role="region" aria-labelledby="question-header">
+                <!-- Le quiz apparaîtra ici -->
+            </div>
+        </section>
     </div>
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Quiz Mode Challenge. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
+
