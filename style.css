@@ -19,9 +19,9 @@ body {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Reduced padding for smaller screens */
-    max-width: 500px;
-    width: 90%;
+    padding: 20px;
+    max-width: 100%; /* Assurez-vous que le conteneur prend toute la largeur sur mobile */
+    width: 100%; /* Largeur maximale sur mobile */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -31,10 +31,10 @@ body {
 
 /* Timer */
 #timer {
-    font-size: 18px; /* Reduced font size for better fit */
+    font-size: 18px;
     margin-bottom: 15px;
     position: relative;
-    height: 4px; /* Reduced height for better fit */
+    height: 4px;
     background: #f0f0f0;
     border-radius: 3px;
     overflow: hidden;
@@ -50,9 +50,9 @@ body {
 button {
     display: block;
     width: 100%;
-    margin: 8px 0; /* Reduced margin for better fit */
-    padding: 10px; /* Reduced padding for better fit */
-    font-size: 16px; /* Adjusted font size for mobile */
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 16px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -86,13 +86,13 @@ button.recommencer:active {
 /* Animation d'Éclat de Couleur */
 @keyframes color-burst {
     0% {
-        background-color: #28a745; /* Couleur initiale (vert) */
+        background-color: #28a745;
     }
     50% {
-        background-color: #ffeb3b; /* Couleur éclatante (jaune) */
+        background-color: #ffeb3b;
     }
     100% {
-        background-color: #28a745; /* Retour à la couleur initiale */
+        background-color: #28a745;
     }
 }
 
@@ -109,66 +109,4 @@ button.recommencer:active {
     50% {
         transform: scale(1.1);
         opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.victory-animation {
-    animation: victory 1s ease-out;
-}
-
-/* Tutorial Styles */
-.tutorial {
-    font-size: 16px; /* Reduced font size for mobile */
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.tutorial p {
-    margin: 8px 0; /* Adjusted margin for better fit */
-}
-
-.start-game {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px; /* Reduced padding for better fit */
-    font-size: 16px; /* Adjusted font size for mobile */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.start-game:hover {
-    background-color: #0056b3;
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 600px) {
-    .container {
-        padding: 15px; /* Further reduced padding for very small screens */
-    }
-
-    #timer {
-        font-size: 16px; /* Adjusted font size */
-        height: 4px; /* Adjusted height */
-    }
-
-    button {
-        font-size: 14px; /* Adjusted font size */
-        padding: 8px; /* Further reduced padding */
-    }
-
-    .tutorial {
-        font-size: 14px; /* Further reduced font size */
-    }
-
-    .start-game {
-        font-size: 14px; /* Further reduced font size */
-        padding: 8px; /* Further reduced padding */
-    }
-}
-
+   
