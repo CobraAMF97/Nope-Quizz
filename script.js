@@ -97,8 +97,7 @@ function checkAnswer(selectedIndex, button) {
         return;
     }
 
-    console.log(`Réponse sélectionnée : ${selectedIndex}, Réponse correcte : ${question.correctIndex}`);
-
+    // Vérifier si l'index sélectionné correspond à l'index de la réponse correcte
     if (question.correctIndex === selectedIndex) {
         score++;
         button.classList.add('burst-animation'); // Ajouter l'animation d'éclat de couleur
