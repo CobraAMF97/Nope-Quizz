@@ -123,7 +123,7 @@ button.recommencer:active {
 /* Mobile Responsive Adjustments */
 @media (max-width: 600px) {
     .container {
-        padding: 10px; /* Further reduced padding for very small screens */
+        padding: 10px;
     }
 
     #timer {
@@ -145,4 +145,5 @@ button.recommencer:active {
         padding: 8px;
     }
 }
+
 
