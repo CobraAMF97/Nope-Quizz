@@ -41,7 +41,6 @@ function showQuestion() {
         return;
     }
 
-    // Mettre à jour l'affichage de la question et des choix
     const questionText = document.getElementById('question-text');
     const choicesContainer = document.getElementById('choices');
     const retryButton = document.getElementById('retry-button');
@@ -90,7 +89,6 @@ function startTimer() {
 function checkAnswer(selectedIndex, button) {
     clearInterval(timerId); // Arrêter le timer
 
-    // Trouver la question actuelle
     const question = selectedQuestions[currentQuestionIndex];
     
     if (!question) {
@@ -98,13 +96,12 @@ function checkAnswer(selectedIndex, button) {
         return;
     }
 
-    // Vérifier si l'index sélectionné correspond à l'index de la réponse correcte
     if (question.correctIndex === selectedIndex) {
         score++;
-        button.classList.add('burst-animation'); // Ajouter l'animation d'éclat de couleur
+        button.classList.add('burst-animation');
 
         setTimeout(() => {
-            button.classList.remove('burst-animation'); // Retirer la classe après l'animation
+            button.classList.remove('burst-animation');
             currentQuestionIndex++;
             if (currentQuestionIndex < totalQuestions) {
                 showQuestion();
@@ -127,17 +124,24 @@ function showHumorousMessage() {
     if (questionText && choicesContainer) {
         questionText.textContent = "Dommage ! Essayez encore ! 😅";
         choicesContainer.innerHTML = '';
-        retryButton.style.display = 'block'; // Afficher le bouton de réessai
+        retryButton.style.display = 'block';
     }
 }
 
-// Fonction pour afficher un message de victoire
+// Fonction pour afficher un message de victoire avec animation de confettis
 function showVictoryMessage() {
     const questionText = document.getElementById('question-text');
     const choicesContainer = document.getElementById('choices');
     
     if (questionText && choicesContainer) {
-        questionText.textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉\nVotre code : CAPDES3ANS`;
+        // Animation de confettis
+        confetti({
+            particleCount: 200,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+
+        questionText.textContent = `Félicitations Julie ! Tu as correctement répondu à 10 questions 🎉 Voici ton code : DERNIEREETAPE`;
         choicesContainer.innerHTML = '';
     }
 }
@@ -158,7 +162,6 @@ window.onload = () => {
 
 // Ajustements pour les écrans tactiles
 document.addEventListener('touchstart', (event) => {
-    // Prévenir les actions indésirables des événements tactiles
     if (event.target.tagName === 'BUTTON') {
         event.preventDefault();
         event.target.click();
