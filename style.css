@@ -109,4 +109,40 @@ button.recommencer:active {
     50% {
         transform: scale(1.1);
         opacity: 1;
-   
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.victory-animation {
+    animation: victory 1s ease-out;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Further reduced padding for very small screens */
+    }
+
+    #timer {
+        font-size: 14px;
+        height: 4px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .tutorial {
+        font-size: 14px;
+    }
+
+    .start-game {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
