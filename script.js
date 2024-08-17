@@ -4,7 +4,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timerId;
 const timeLimit = 30; // Temps en secondes pour chaque question
-const timerDisplay = document.getElementById('timer');
+let timerDisplay;
 
 // Fonction pour charger les questions depuis le fichier JSON
 function loadQuestions() {
@@ -27,8 +27,15 @@ function showQuestion() {
     }
 
     // Mettre à jour l'affichage de la question et des choix
-    document.getElementById('question-text').textContent = question.question;
+    const questionText = document.getElementById('question-text');
     const choicesContainer = document.getElementById('choices');
+
+    if (!questionText || !choicesContainer) {
+        console.error("Éléments HTML nécessaires non trouvés");
+        return;
+    }
+
+    questionText.textContent = question.question;
     choicesContainer.innerHTML = '';
 
     question.choices.forEach((choice, index) => {
@@ -45,11 +52,15 @@ function showQuestion() {
 // Fonction pour démarrer le timer
 function startTimer() {
     let timeLeft = timeLimit;
-    timerDisplay.textContent = `Temps restant : ${timeLeft}s`;
+    const timerBar = document.querySelector('#timer .timer-bar');
+    
+    timerBar.style.width = '100%';
 
     timerId = setInterval(() => {
         timeLeft--;
         timerDisplay.textContent = `Temps restant : ${timeLeft}s`;
+
+        timerBar.style.width = `${(timeLeft / timeLimit) * 100}%`;
 
         if (timeLeft <= 0) {
             clearInterval(timerId);
@@ -78,19 +89,14 @@ function checkAnswer(selectedIndex, button) {
 
         setTimeout(() => {
             button.classList.remove('burst-animation'); // Retirer la classe après l'animation
+            currentQuestionIndex++;
+            if (score >= 10 || currentQuestionIndex >= questions.length) {
+                showVictoryMessage();
+            } else {
+                showQuestion();
+            }
         }, 1000);
 
-        if (score >= 10) {
-            showVictoryMessage();
-        } else {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                startTimer();
-                showQuestion();
-            } else {
-                showVictoryMessage();
-            }
-        }
     } else {
         showHumorousMessage();
     }
@@ -98,18 +104,31 @@ function checkAnswer(selectedIndex, button) {
 
 // Fonction pour afficher un message humoristique
 function showHumorousMessage() {
-    document.getElementById('question-text').textContent = "Dommage ! Essayez encore ! 😅";
-    document.getElementById('choices').innerHTML = '';
+    const questionText = document.getElementById('question-text');
+    const choicesContainer = document.getElementById('choices');
+    
+    if (questionText && choicesContainer) {
+        questionText.textContent = "Dommage ! Essayez encore ! 😅";
+        choicesContainer.innerHTML = '';
+    }
 }
 
 // Fonction pour afficher un message de victoire
 function showVictoryMessage() {
-    document.getElementById('question-text').textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉`;
-    document.getElementById('choices').innerHTML = '';
+    const questionText = document.getElementById('question-text');
+    const choicesContainer = document.getElementById('choices');
+    
+    if (questionText && choicesContainer) {
+        questionText.textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉`;
+        choicesContainer.innerHTML = '';
+    }
 }
 
 // Initialisation du jeu
-window.onload = loadQuestions;
+window.onload = () => {
+    timerDisplay = document.getElementById('timer');
+    loadQuestions();
+};
 
 // Ajustements pour les écrans tactiles
 document.addEventListener('touchstart', (event) => {
@@ -119,6 +138,7 @@ document.addEventListener('touchstart', (event) => {
         event.target.click();
     }
 });
+
 
 
 
