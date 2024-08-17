@@ -71,15 +71,15 @@ button:active {
     transform: translateY(0);
 }
 
-button.recommencer {
+button.recommencer, #retry-button {
     background-color: #dc3545;
 }
 
-button.recommencer:hover {
+button.recommencer:hover, #retry-button:hover {
     background-color: #c82333;
 }
 
-button.recommencer:active {
+button.recommencer:active, #retry-button:active {
     background-color: #a71d2a;
 }
 
@@ -145,5 +145,3 @@ button.recommencer:active {
         padding: 8px;
     }
 }
-
-
