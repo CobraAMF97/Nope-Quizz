@@ -48,12 +48,6 @@
         "difficulty": "hard"
     },
     {
-        "question": "Quel est l'emblème de la maison Hermès ?",
-        "choices": ["Cheval", "Lion", "Aigle", "Chien"],
-        "correctIndex": 0,
-        "difficulty": "medium"
-    },
-    {
         "question": "Quelle année le lycée Paul Claudel a-t-il été fondé ?",
         "choices": ["1888", "1898", "1901", "1912"],
         "correctIndex": 3,
@@ -102,7 +96,7 @@
         "difficulty": "easy"
     },
     {
-        "question": "En quelle année a été lancée la première iPhone ?",
+        "question": "En quelle année a été lancé le premier iPhone ?",
         "choices": ["2005", "2006", "2007", "2008"],
         "correctIndex": 2,
         "difficulty": "medium"
@@ -226,5 +220,35 @@
         "choices": ["1990", "1992", "1995", "1998"],
         "correctIndex": 1,
         "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le vrai prénom du personnage que tout le monde connaît sous le nom de Lady Whistledown ?",
+        "choices": ["Penelope Featherington", "Eloise Bridgerton", "Cressida Cowper", "Marina Thompson"],
+        "correctIndex": 0,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quelle est la raison pour laquelle Simon Basset, le Duc de Hastings, refuse de se marier et d'avoir des enfants ?",
+        "choices": ["Il est incapable d'avoir des enfants", "Il ne veut pas perpétuer la lignée de son père", "Il est déjà secrètement marié", "Il a peur des responsabilités"],
+        "correctIndex": 1,
+        "difficulty": "hard"
+    },
+    {
+        "question": "Quel est le talent artistique que Benedict Bridgerton souhaite poursuivre malgré les attentes sociales de sa famille ?",
+        "choices": ["La peinture", "La sculpture", "La danse", "La musique"],
+        "correctIndex": 0,
+        "difficulty": "medium"
+    },
+    {
+        "question": "Quel est le prénom du jeune garçon dont Vic tombe amoureuse lors de la boum ?",
+        "choices": ["Mathieu", "Philippe", "Stéphane", "Laurent"],
+        "correctIndex": 0,
+        "difficulty": "easy"
+    },
+    {
+        "question": "Quelle actrice incarne la grand-mère de Vic, Poupette, dans le film ?",
+        "choices": ["Anémone", "Brigitte Fossey", "Denise Grey", "Danièle Delorme"],
+        "correctIndex": 2,
+        "difficulty": "medium"
     }
 ]
