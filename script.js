@@ -22,6 +22,7 @@ function loadQuestions() {
 
 // Fonction pour sélectionner aléatoirement 10 questions
 function selectRandomQuestions() {
+    selectedQuestions = [];
     while (selectedQuestions.length < totalQuestions) {
         const randomIndex = Math.floor(Math.random() * questions.length);
         if (!selectedQuestions.includes(questions[randomIndex])) {
@@ -42,6 +43,7 @@ function showQuestion() {
     // Mettre à jour l'affichage de la question et des choix
     const questionText = document.getElementById('question-text');
     const choicesContainer = document.getElementById('choices');
+    const retryButton = document.getElementById('retry-button');
 
     if (!questionText || !choicesContainer) {
         console.error("Éléments HTML nécessaires non trouvés");
@@ -50,6 +52,7 @@ function showQuestion() {
 
     questionText.textContent = question.question;
     choicesContainer.innerHTML = '';
+    retryButton.style.display = 'none'; // Masquer le bouton de réessai
 
     question.choices.forEach((choice, index) => {
         const button = document.createElement('button');
@@ -115,14 +118,16 @@ function checkAnswer(selectedIndex, button) {
     }
 }
 
-// Fonction pour afficher un message humoristique
+// Fonction pour afficher un message humoristique et le bouton de réessai
 function showHumorousMessage() {
     const questionText = document.getElementById('question-text');
     const choicesContainer = document.getElementById('choices');
+    const retryButton = document.getElementById('retry-button');
     
     if (questionText && choicesContainer) {
         questionText.textContent = "Dommage ! Essayez encore ! 😅";
         choicesContainer.innerHTML = '';
+        retryButton.style.display = 'block'; // Afficher le bouton de réessai
     }
 }
 
@@ -135,6 +140,14 @@ function showVictoryMessage() {
         questionText.textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉\nVotre code : CAPDES3ANS`;
         choicesContainer.innerHTML = '';
     }
+}
+
+// Fonction pour réinitialiser le jeu
+function resetGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    selectRandomQuestions();
+    showQuestion();
 }
 
 // Initialisation du jeu
