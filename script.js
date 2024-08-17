@@ -1,9 +1,11 @@
 // Déclaration des variables globales
 let questions = [];
+let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let timerId;
 const timeLimit = 30; // Temps en secondes pour chaque question
+const totalQuestions = 10; // Nombre total de questions à poser
 let timerDisplay;
 
 // Fonction pour charger les questions depuis le fichier JSON
@@ -12,14 +14,25 @@ function loadQuestions() {
         .then(response => response.json())
         .then(data => {
             questions = data;
+            selectRandomQuestions();
             showQuestion();
         })
         .catch(error => console.error('Erreur de chargement des questions:', error));
 }
 
+// Fonction pour sélectionner aléatoirement 10 questions
+function selectRandomQuestions() {
+    while (selectedQuestions.length < totalQuestions) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        if (!selectedQuestions.includes(questions[randomIndex])) {
+            selectedQuestions.push(questions[randomIndex]);
+        }
+    }
+}
+
 // Fonction pour afficher la question actuelle
 function showQuestion() {
-    const question = questions[currentQuestionIndex];
+    const question = selectedQuestions[currentQuestionIndex];
     
     if (!question) {
         console.error("Question non trouvée");
@@ -74,7 +87,7 @@ function checkAnswer(selectedIndex, button) {
     clearInterval(timerId); // Arrêter le timer
 
     // Trouver la question actuelle
-    const question = questions[currentQuestionIndex];
+    const question = selectedQuestions[currentQuestionIndex];
     
     if (!question) {
         console.error("Question non trouvée");
@@ -90,10 +103,10 @@ function checkAnswer(selectedIndex, button) {
         setTimeout(() => {
             button.classList.remove('burst-animation'); // Retirer la classe après l'animation
             currentQuestionIndex++;
-            if (score >= 10 || currentQuestionIndex >= questions.length) {
-                showVictoryMessage();
-            } else {
+            if (currentQuestionIndex < totalQuestions) {
                 showQuestion();
+            } else {
+                showVictoryMessage();
             }
         }, 1000);
 
@@ -119,7 +132,7 @@ function showVictoryMessage() {
     const choicesContainer = document.getElementById('choices');
     
     if (questionText && choicesContainer) {
-        questionText.textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉`;
+        questionText.textContent = `Félicitations ! Vous avez gagné avec un score de ${score} ! 🎉\nVotre code : CAPDES3ANS`;
         choicesContainer.innerHTML = '';
     }
 }
@@ -138,4 +151,3 @@ document.addEventListener('touchstart', (event) => {
         event.target.click();
     }
 });
-
