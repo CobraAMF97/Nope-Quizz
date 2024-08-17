@@ -100,6 +100,19 @@ button.recommencer:active, #retry-button:active {
     animation: color-burst 1s ease-out;
 }
 
+/* Animation de Secousse (Shake) */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-animation {
+    animation: shake 0.5s ease;
+}
+
 /* Victory Animation */
 @keyframes victory {
     0% {
