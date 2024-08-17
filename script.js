@@ -111,7 +111,12 @@ function checkAnswer(selectedIndex, button) {
         }, 1000);
 
     } else {
-        showHumorousMessage();
+        button.classList.add('shake-animation'); // Ajouter l'animation de secousse
+
+        setTimeout(() => {
+            button.classList.remove('shake-animation'); // Retirer l'animation après son exécution
+            showHumorousMessage();
+        }, 500); // La durée de l'animation de secousse est de 0.5s
     }
 }
 
