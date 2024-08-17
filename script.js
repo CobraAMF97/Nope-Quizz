@@ -20,14 +20,15 @@ function loadQuestions() {
         .catch(error => console.error('Erreur de chargement des questions:', error));
 }
 
-// Fonction pour sélectionner aléatoirement 10 questions
+// Fonction pour sélectionner aléatoirement 10 questions sans répétition
 function selectRandomQuestions() {
+    const questionPool = [...questions]; // Crée une copie du tableau de questions
     selectedQuestions = [];
-    while (selectedQuestions.length < totalQuestions) {
-        const randomIndex = Math.floor(Math.random() * questions.length);
-        if (!selectedQuestions.includes(questions[randomIndex])) {
-            selectedQuestions.push(questions[randomIndex]);
-        }
+    
+    while (selectedQuestions.length < totalQuestions && questionPool.length > 0) {
+        const randomIndex = Math.floor(Math.random() * questionPool.length);
+        const selectedQuestion = questionPool.splice(randomIndex, 1)[0]; // Retire la question pour éviter les répétitions
+        selectedQuestions.push(selectedQuestion);
     }
 }
 
