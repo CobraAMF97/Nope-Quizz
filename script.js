@@ -146,7 +146,7 @@ function showVictoryMessage() {
             origin: { y: 0.6 }
         });
 
-        questionText.textContent = `Félicitations Julie ! Tu as correctement répondu à 10 questions 🎉 Voici ton code : DERNIEREETAPE`;
+        questionText.textContent = `Félicitations Julie ! Tu as correctement répondu à 10 questions 🎉 Voici ton code : O21`;
         choicesContainer.innerHTML = '';
     }
 }
