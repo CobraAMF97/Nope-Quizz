@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour réinitialiser le jeu
     function resetGame() {
+        clearInterval(timerId); // Arrêter le timer s'il était en cours
         currentQuestionIndex = 0;
         score = 0;
         selectRandomQuestions();
